@@ -1,0 +1,66 @@
+{
+  "slug": "tirzepatide",
+  "name": "Tirzepatide",
+  "aliases": ["GIP/GLP-1 RA", "Mounjaro", "Zepbound"],
+  "category_tags": ["metabolic", "weight"],
+  "typical_route": ["subQ"],
+  "overview": "Tirzepatide is a dual GIP and GLP-1 receptor agonist approved for type 2 diabetes management and chronic weight management. It acts on two incretin hormone pathways to regulate blood sugar and reduce appetite.",
+  "what_people_seek": [
+    "Weight management support",
+    "Blood sugar control (in diabetes care)",
+    "Appetite regulation",
+    "Metabolic health improvement"
+  ],
+  "evidence_level": "Strong",
+  "risk_level": "Moderate",
+  "side_effects_common": [
+    "Nausea and vomiting (often dose-dependent)",
+    "Diarrhea or constipation",
+    "Abdominal discomfort",
+    "Decreased appetite",
+    "Fatigue",
+    "Injection site reactions"
+  ],
+  "who_should_avoid": [
+    "Pregnant or breastfeeding individuals",
+    "Those with personal or family history of medullary thyroid carcinoma",
+    "People with Multiple Endocrine Neoplasia syndrome type 2 (MEN 2)",
+    "Individuals with severe gastrointestinal disease",
+    "Anyone with hypersensitivity to tirzepatide"
+  ],
+  "interactions_notes": "May increase hypoglycemia risk when combined with insulin or sulfonylureas. Can delay gastric emptying and affect oral medication absorption. Full medication review with prescriber is essential.",
+  "dosing_ranges_literature": "Weight management protocols typically start at 2.5 mg weekly, escalating every 4 weeks to a target maintenance dose (often 5-15 mg weekly) as tolerated. Diabetes dosing may differ. Follow prescriber instructions.",
+  "reconstitution": {
+    "vial_total_mg": 10,
+    "common_diluents_ml": [2],
+    "example_doses_mg": [2.5, 5, 7.5, 10, 12.5, 15]
+  },
+  "storage_notes": "Keep refrigerated before first use. After initial use, some formulations allow room temperature storage for a limited time. Refer to manufacturer guidelines.",
+  "references": [
+    {
+      "id": "ref1",
+      "title": "Tirzepatide for Weight Reduction: SURMOUNT Trial Data",
+      "source": "PubMed",
+      "year": 2022,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/example",
+      "note": "Clinical trial showing substantial weight loss in adults with obesity."
+    },
+    {
+      "id": "ref2",
+      "title": "Dual GIP/GLP-1 Receptor Agonism: Mechanisms and Clinical Impact",
+      "source": "Review",
+      "year": 2023,
+      "url": "https://example.com/dual-agonist-review",
+      "note": "Discusses how targeting both pathways may enhance metabolic benefits."
+    },
+    {
+      "id": "ref3",
+      "title": "FDA Label: Tirzepatide Injection",
+      "source": "Guideline",
+      "year": 2023,
+      "url": "https://www.accessdata.fda.gov/example-tirz",
+      "note": "Official prescribing information with indications, dosing, and safety warnings."
+    }
+  ],
+  "last_reviewed": "2025-11-02"
+}

@@ -1,0 +1,60 @@
+{
+  "slug": "melanotan-2",
+  "name": "Melanotan-2",
+  "aliases": ["MT-2", "MT-II", "Melanotan II"],
+  "category_tags": ["skin", "libido"],
+  "typical_route": ["subQ"],
+  "overview": "Melanotan-2 is a synthetic peptide analog of alpha-melanocyte stimulating hormone. It is often discussed for its effects on skin pigmentation and libido, though it is not approved by major regulatory agencies and safety data is limited.",
+  "what_people_seek": [
+    "Skin tanning without UV exposure",
+    "Libido enhancement",
+    "Appetite suppression (secondary effect)",
+    "Sexual function support"
+  ],
+  "evidence_level": "Preliminary",
+  "risk_level": "High",
+  "side_effects_common": [
+    "Nausea (especially with initial doses)",
+    "Flushing",
+    "Facial darkening or uneven pigmentation",
+    "Spontaneous erections (in males)",
+    "Increased skin moles and freckles",
+    "Fatigue",
+    "Loss of appetite"
+  ],
+  "who_should_avoid": [
+    "Pregnant or breastfeeding individuals",
+    "People with a personal or family history of melanoma or other skin cancers",
+    "Those with cardiovascular conditions",
+    "Individuals with uncontrolled high blood pressure",
+    "Anyone with numerous moles or atypical moles (requires dermatology evaluation)",
+    "Those taking medications affecting skin or cardiovascular system without medical review"
+  ],
+  "interactions_notes": "May interact with medications affecting blood pressure or cardiovascular function. Risk profile is poorly characterized. Consultation with healthcare provider is critical.",
+  "dosing_ranges_literature": "Anecdotal protocols often cite 0.25-1 mg per dose, with 'loading' phases followed by maintenance. No formal clinical dosing exists. Use is not medically endorsed.",
+  "reconstitution": {
+    "vial_total_mg": 10,
+    "common_diluents_ml": [1, 2],
+    "example_doses_mg": [0.25, 0.5, 1]
+  },
+  "storage_notes": "Store lyophilized powder refrigerated or frozen. After reconstitution, refrigerate and use promptly per supplier guidance.",
+  "references": [
+    {
+      "id": "ref1",
+      "title": "Melanocortin Receptor Agonists: Risks and Unknowns",
+      "source": "Review",
+      "year": 2020,
+      "url": "https://example.com/melanotan-risks",
+      "note": "Highlights lack of regulatory approval and safety concerns including potential link to skin cancer."
+    },
+    {
+      "id": "ref2",
+      "title": "Unregulated Tanning Peptides: Public Health Perspective",
+      "source": "Other",
+      "year": 2021,
+      "url": "https://example.com/tanning-peptides",
+      "note": "Discusses unmonitored distribution and potential harms of non-approved tanning agents."
+    }
+  ],
+  "last_reviewed": "2025-11-02"
+}

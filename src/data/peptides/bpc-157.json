@@ -1,0 +1,55 @@
+{
+  "slug": "bpc-157",
+  "name": "BPC-157",
+  "aliases": ["Body Protection Compound-157", "PL 14736", "PL-10"],
+  "category_tags": ["recovery", "gut", "tendons", "joints"],
+  "typical_route": ["subQ", "oral"],
+  "overview": "BPC-157 is an experimental synthetic peptide derived from a protective stomach protein. It is frequently discussed in relation to soft-tissue recovery and gastrointestinal support, though human clinical data remains limited.",
+  "what_people_seek": [
+    "Joint comfort and mobility",
+    "Tendon and ligament support",
+    "Gut lining and digestive health",
+    "Post-exercise recovery"
+  ],
+  "evidence_level": "Preliminary",
+  "risk_level": "Unknown",
+  "side_effects_common": [
+    "Digestive changes (bloating, altered bowel movements)",
+    "Headache",
+    "Lightheadedness or dizziness",
+    "Fatigue"
+  ],
+  "who_should_avoid": [
+    "Individuals who are pregnant or breastfeeding",
+    "Those with a history of hormone-sensitive cancers",
+    "People with significant uncontrolled medical conditions without clinician review",
+    "Anyone with known hypersensitivity to peptides"
+  ],
+  "interactions_notes": "Limited interaction data exists. Review all medications, supplements, and health conditions with a qualified healthcare provider before use.",
+  "dosing_ranges_literature": "Protocols found online vary widely, often citing 200-500 mcg once or twice daily. Formal clinical dosing guidelines are not established. Always discuss with a clinician.",
+  "reconstitution": {
+    "vial_total_mg": 5,
+    "common_diluents_ml": [1, 2],
+    "example_doses_mg": [0.1, 0.25, 0.5, 1]
+  },
+  "storage_notes": "Lyophilized powder is typically stable at room temperature for short periods. After reconstitution, refrigeration (2-8°C) is commonly recommended. Follow supplier-specific guidance.",
+  "references": [
+    {
+      "id": "ref1",
+      "title": "BPC 157: A Review of the Literature on its Use and Safety",
+      "source": "Review",
+      "year": 2020,
+      "url": "https://example.com/bpc157-review",
+      "note": "Overview of preclinical studies showing potential tissue-protective effects in animal models."
+    },
+    {
+      "id": "ref2",
+      "title": "Gastric Pentadecapeptide BPC 157: A Review of its Mechanisms",
+      "source": "Review",
+      "year": 2021,
+      "url": "https://example.com/bpc157-mechanisms",
+      "note": "Discusses theoretical mechanisms based on laboratory research; human trials are limited."
+    }
+  ],
+  "last_reviewed": "2025-11-02"
+}

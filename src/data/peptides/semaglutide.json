@@ -1,0 +1,66 @@
+{
+  "slug": "semaglutide",
+  "name": "Semaglutide",
+  "aliases": ["GLP-1 RA", "Ozempic", "Wegovy", "Rybelsus"],
+  "category_tags": ["metabolic", "weight"],
+  "typical_route": ["subQ", "oral"],
+  "overview": "Semaglutide is a GLP-1 receptor agonist approved by regulatory agencies for type 2 diabetes management and chronic weight management. It works by mimicking incretin hormones that regulate blood sugar and appetite.",
+  "what_people_seek": [
+    "Weight management support",
+    "Blood sugar regulation (in context of diabetes care)",
+    "Appetite control",
+    "Cardiovascular health benefits"
+  ],
+  "evidence_level": "Strong",
+  "risk_level": "Moderate",
+  "side_effects_common": [
+    "Nausea and vomiting",
+    "Diarrhea or constipation",
+    "Abdominal pain",
+    "Decreased appetite",
+    "Fatigue",
+    "Injection site reactions (for injectable forms)"
+  ],
+  "who_should_avoid": [
+    "Pregnant or breastfeeding individuals",
+    "Those with a personal or family history of medullary thyroid carcinoma",
+    "People with Multiple Endocrine Neoplasia syndrome type 2 (MEN 2)",
+    "Individuals with a history of severe gastrointestinal disease",
+    "Anyone with a known hypersensitivity to semaglutide"
+  ],
+  "interactions_notes": "May interact with insulin, sulfonylureas, and other diabetes medications, increasing risk of hypoglycemia. May delay gastric emptying, affecting absorption of oral medications. Discuss all medications with your healthcare provider.",
+  "dosing_ranges_literature": "For weight management, typical escalation starts at 0.25 mg weekly, gradually increasing to a maintenance dose of 2.4 mg weekly as tolerated. For diabetes, dosing protocols differ. Always follow prescriber guidance.",
+  "reconstitution": {
+    "vial_total_mg": 5,
+    "common_diluents_ml": [2],
+    "example_doses_mg": [0.25, 0.5, 1, 1.7, 2.4]
+  },
+  "storage_notes": "Unopened pens and vials should be refrigerated. After first use, some formulations may be kept at room temperature for a limited period. Follow manufacturer instructions closely.",
+  "references": [
+    {
+      "id": "ref1",
+      "title": "Semaglutide for Weight Management: STEP Trial Results",
+      "source": "PubMed",
+      "year": 2021,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/example",
+      "note": "Large clinical trial demonstrating significant weight loss in participants without diabetes."
+    },
+    {
+      "id": "ref2",
+      "title": "GLP-1 Receptor Agonists: Cardiovascular and Metabolic Effects",
+      "source": "Review",
+      "year": 2022,
+      "url": "https://example.com/glp1-review",
+      "note": "Reviews cardiovascular benefits and safety profile of GLP-1 receptor agonists."
+    },
+    {
+      "id": "ref3",
+      "title": "FDA Label: Semaglutide Injection",
+      "source": "Guideline",
+      "year": 2023,
+      "url": "https://www.accessdata.fda.gov/example",
+      "note": "Official prescribing information including approved indications, dosing, and warnings."
+    }
+  ],
+  "last_reviewed": "2025-11-02"
+}

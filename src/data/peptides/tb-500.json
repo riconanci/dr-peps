@@ -1,0 +1,55 @@
+{
+  "slug": "tb-500",
+  "name": "TB-500",
+  "aliases": ["Thymosin Beta-4", "Tβ4"],
+  "category_tags": ["recovery", "tendons", "joints"],
+  "typical_route": ["subQ", "IM"],
+  "overview": "TB-500 is a synthetic version of the naturally occurring peptide Thymosin Beta-4. It is often discussed for its potential role in tissue repair and recovery, though robust human clinical evidence is sparse.",
+  "what_people_seek": [
+    "Soft tissue healing support",
+    "Joint and tendon recovery",
+    "Injury rehabilitation assistance",
+    "Flexibility and mobility"
+  ],
+  "evidence_level": "Preliminary",
+  "risk_level": "Unknown",
+  "side_effects_common": [
+    "Injection site reactions (redness, swelling)",
+    "Headache",
+    "Fatigue",
+    "Nausea"
+  ],
+  "who_should_avoid": [
+    "Pregnant or breastfeeding individuals",
+    "Those with active cancers or a history of cancer without oncologist approval",
+    "People with autoimmune conditions without medical supervision",
+    "Anyone with known peptide allergies"
+  ],
+  "interactions_notes": "Interactions are poorly documented. Discuss all current medications and health conditions with a healthcare professional.",
+  "dosing_ranges_literature": "Common protocols mention 2-5 mg per injection, typically 1-2 times weekly. Clinical dosing standards are not established.",
+  "reconstitution": {
+    "vial_total_mg": 5,
+    "common_diluents_ml": [1, 2],
+    "example_doses_mg": [2, 2.5, 5]
+  },
+  "storage_notes": "Store lyophilized powder refrigerated. After reconstitution, use within recommended timeframe per supplier; refrigeration typically required.",
+  "references": [
+    {
+      "id": "ref1",
+      "title": "Thymosin β4: Structure, Function, and Therapeutic Applications",
+      "source": "Review",
+      "year": 2019,
+      "url": "https://example.com/tb4-review",
+      "note": "Examines preclinical research on thymosin beta-4's role in wound healing and tissue repair."
+    },
+    {
+      "id": "ref2",
+      "title": "Potential Therapeutic Uses of Thymosin Beta-4",
+      "source": "Other",
+      "year": 2022,
+      "url": "https://example.com/tb4-therapeutic",
+      "note": "Reviews potential applications; notes limited human trial data."
+    }
+  ],
+  "last_reviewed": "2025-11-02"
+}

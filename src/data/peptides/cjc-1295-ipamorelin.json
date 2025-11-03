@@ -1,0 +1,58 @@
+{
+  "slug": "cjc-1295-ipamorelin",
+  "name": "CJC-1295 with Ipamorelin",
+  "aliases": ["CJC-1295", "Ipamorelin", "Growth Hormone Secretagogue Combo"],
+  "category_tags": ["growth", "recovery", "metabolic", "sleep"],
+  "typical_route": ["subQ"],
+  "overview": "CJC-1295 and Ipamorelin are peptides that stimulate the release of growth hormone. They are often combined and discussed for potential effects on body composition, recovery, and sleep quality, though human clinical research is limited.",
+  "what_people_seek": [
+    "Body composition support",
+    "Muscle recovery and maintenance",
+    "Sleep quality improvement",
+    "Energy and vitality"
+  ],
+  "evidence_level": "Preliminary",
+  "risk_level": "Moderate",
+  "side_effects_common": [
+    "Injection site reactions",
+    "Water retention",
+    "Headache",
+    "Flushing or warmth",
+    "Increased hunger",
+    "Numbness or tingling"
+  ],
+  "who_should_avoid": [
+    "Pregnant or breastfeeding individuals",
+    "Those with active cancer or history of cancer",
+    "People with diabetes or blood sugar dysregulation without medical oversight",
+    "Individuals with pituitary disorders",
+    "Anyone under 18 years of age"
+  ],
+  "interactions_notes": "May affect blood sugar and hormone levels. Close monitoring with a healthcare provider is essential, especially for those on diabetes or hormone-related medications.",
+  "dosing_ranges_literature": "Typical protocols mention 100-300 mcg of each peptide per dose, often administered before bed. Clinical standards are not established.",
+  "reconstitution": {
+    "vial_total_mg": 5,
+    "common_diluents_ml": [2],
+    "example_doses_mg": [0.1, 0.15, 0.2, 0.3]
+  },
+  "storage_notes": "Store lyophilized peptides refrigerated. After reconstitution, refrigerate and use within the timeframe specified by the supplier.",
+  "references": [
+    {
+      "id": "ref1",
+      "title": "Growth Hormone Secretagogues: Clinical Applications",
+      "source": "Review",
+      "year": 2021,
+      "url": "https://example.com/ghs-review",
+      "note": "Reviews mechanisms and potential applications; notes need for more rigorous human trials."
+    },
+    {
+      "id": "ref2",
+      "title": "Ipamorelin and CJC-1295: An Overview of Effects",
+      "source": "Other",
+      "year": 2022,
+      "url": "https://example.com/ipa-cjc-overview",
+      "note": "Discusses anecdotal use and limited clinical data."
+    }
+  ],
+  "last_reviewed": "2025-11-02"
+}
