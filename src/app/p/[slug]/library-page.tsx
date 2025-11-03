@@ -11,15 +11,15 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/Card';
 // Icon mapping for benefits
 const benefitIcons: Record<string, { icon: string; label: string }> = {
   recovery: { icon: '🏃', label: 'Recovery' },
-  gut: { icon: '🦠', label: 'Gut Health' },
+  gut: { icon: '🫁', label: 'Gut Health' },
   joints: { icon: '🦴', label: 'Joints' },
-  tendons: { icon: '💪🏼', label: 'Tendons' },
+  tendons: { icon: '💪', label: 'Tendons' },
   weight: { icon: '⚖️', label: 'Weight' },
   metabolic: { icon: '🔥', label: 'Metabolic' },
   'skin & hair': { icon: '✨', label: 'Skin & Hair' },
   skin: { icon: '✨', label: 'Skin & Hair' }, // Alias
   cognitive: { icon: '🧠', label: 'Cognitive' },
-  sleep: { icon: '💤', label: 'Sleep' },
+  sleep: { icon: '😴', label: 'Sleep' },
   libido: { icon: '❤️', label: 'Libido' },
   growth: { icon: '📈', label: 'Growth' },
 };

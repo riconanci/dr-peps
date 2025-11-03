@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 interface DisclaimerBannerProps {
   severity?: 'warning' | 'danger';
@@ -11,7 +11,23 @@ export default function DisclaimerBanner({
   severity = 'danger',
   text = "Educational resource only. Not medical advice. Consult a licensed clinician before using any peptide. If you're experiencing an emergency, call your local emergency number.",
 }: DisclaimerBannerProps) {
+  const [isVisible, setIsVisible] = useState(true);
   const [isMinimized, setIsMinimized] = useState(false);
+
+  // Check localStorage on mount
+  useEffect(() => {
+    const dismissed = localStorage.getItem('disclaimer-dismissed');
+    if (dismissed === 'true') {
+      setIsVisible(false);
+    }
+  }, []);
+
+  const handleAccept = () => {
+    localStorage.setItem('disclaimer-dismissed', 'true');
+    setIsVisible(false);
+  };
+
+  if (!isVisible) return null;
 
   const bgColor = severity === 'danger' 
     ? 'bg-red-600/20 border-red-600/30' 
@@ -46,21 +62,31 @@ export default function DisclaimerBanner({
               </p>
             </div>
           </div>
-          <button
-            onClick={() => setIsMinimized(!isMinimized)}
-            className="flex-shrink-0 rounded-lg p-1 hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-primary-500 transition-colors"
-            aria-label={isMinimized ? 'Expand disclaimer' : 'Minimize disclaimer'}
-            aria-expanded={!isMinimized}
-          >
-            <svg
-              className={`h-5 w-5 text-slate-300 transition-transform ${isMinimized ? 'rotate-180' : ''}`}
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+          
+          <div className="flex items-center gap-2">
+            <button
+              onClick={handleAccept}
+              className="flex-shrink-0 px-3 py-1.5 text-sm font-medium bg-white/10 hover:bg-white/20 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-white/50 transition-colors"
+              aria-label="Accept and dismiss disclaimer"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
+              Accept
+            </button>
+            <button
+              onClick={() => setIsMinimized(!isMinimized)}
+              className="flex-shrink-0 rounded-lg p-1 hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-primary-500 transition-colors"
+              aria-label={isMinimized ? 'Expand disclaimer' : 'Minimize disclaimer'}
+              aria-expanded={!isMinimized}
+            >
+              <svg
+                className={`h-5 w-5 text-slate-300 transition-transform ${isMinimized ? 'rotate-180' : ''}`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </div>
