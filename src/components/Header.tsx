@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
+import Image from 'next/image';
 
 export default function Header() {
   const pathname = usePathname();
@@ -23,9 +24,16 @@ export default function Header() {
           {/* Logo */}
           <Link
             href="/"
-            className="text-xl font-bold text-primary-400 hover:text-primary-300 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 rounded"
+            className="focus:outline-none focus:ring-2 focus:ring-primary-500 rounded"
           >
-            Dr Peps 💊
+            <Image
+              src="/logo.png"
+              alt="Dr Peps"
+              width={120}
+              height={40}
+              priority
+              className="h-12 w-auto -translate-x-2"
+            />
           </Link>
 
           {/* Desktop Navigation */}
