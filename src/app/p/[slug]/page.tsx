@@ -9,6 +9,9 @@ interface PageProps {
   params: {
     slug: string;
   };
+  searchParams?: {
+    return?: string;
+  };
 }
 
 export async function generateStaticParams() {
@@ -33,12 +36,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default function PeptidePage({ params }: PageProps) {
+export default function PeptidePage({ params, searchParams }: PageProps) {
   const peptide = getPeptideBySlug(params.slug);
 
   if (!peptide) {
     notFound();
   }
+
+  // Build back link with preserved filters
+  const backToLibraryUrl = searchParams?.return 
+    ? `/library${searchParams.return}`
+    : '/library';
 
   const reconUrl = `/tools/reconstitution?vial_mg=${peptide.reconstitution.vial_total_mg}&diluent_ml=${peptide.reconstitution.common_diluents_ml[0]}`;
 
@@ -47,7 +55,7 @@ export default function PeptidePage({ params }: PageProps) {
       {/* Header */}
       <div className="space-y-4">
         <Link
-          href="/library"
+          href={backToLibraryUrl}
           className="inline-flex items-center text-sm text-primary-400 hover:text-primary-300 font-medium transition-colors"
         >
           ← Back to Library
@@ -63,25 +71,30 @@ export default function PeptidePage({ params }: PageProps) {
           )}
         </div>
 
-        {/* Badges and Routes */}
-        <div className="flex flex-wrap items-center gap-3">
+        {/* Badges */}
+        <div className="flex flex-wrap gap-3">
           <EvidenceBadge level={peptide.evidence_level} />
           <RiskBadge level={peptide.risk_level} />
-          
-          {/* Administration Routes - flowing pills */}
-          <div className="flex items-center gap-2">
-            <span className="text-sm text-slate-400">Route:</span>
-            <div className="flex flex-wrap gap-2">
-              {peptide.typical_route.map((route) => (
-                <span
-                  key={route}
-                  className="inline-flex px-3 py-1 text-sm font-medium bg-slate-700 text-slate-200 rounded-full"
-                >
-                  {route}
-                </span>
-              ))}
-            </div>
-          </div>
+        </div>
+
+        {/* Administration Routes with better flow */}
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="text-sm font-semibold text-slate-400 uppercase tracking-wide">
+            Administration:
+          </span>
+          {peptide.typical_route.map((route) => (
+            <span
+              key={route}
+              className="px-3 py-1 bg-blue-600/20 border border-blue-500/30 text-blue-300 rounded-full text-sm font-medium"
+            >
+              {route === 'subQ' && '💉 SubQ'}
+              {route === 'oral' && '💊 Oral'}
+              {route === 'nasal' && '👃 Nasal'}
+              {route === 'topical' && '🧴 Topical'}
+              {route === 'IM' && '💉 IM'}
+              {!['subQ', 'oral', 'nasal', 'topical', 'IM'].includes(route) && route}
+            </span>
+          ))}
         </div>
       </div>
 
@@ -95,17 +108,17 @@ export default function PeptidePage({ params }: PageProps) {
         </CardContent>
       </Card>
 
-      {/* Benefits - Light Green */}
+      {/* Benefits (formerly "What People Seek") - Light Green */}
       <Card className="bg-green-900/20 border-green-700/30">
         <CardHeader>
           <CardTitle className="text-green-300">Benefits</CardTitle>
         </CardHeader>
         <CardContent>
           <ul className="space-y-2">
-            {peptide.what_people_seek.map((item, index) => (
-              <li key={index} className="flex items-start">
-                <span className="text-green-400 mr-2 mt-0.5">✓</span>
-                <span className="text-white leading-relaxed">{item}</span>
+            {peptide.what_people_seek.map((item, idx) => (
+              <li key={idx} className="flex items-start text-white">
+                <span className="text-green-400 mr-2">✓</span>
+                <span>{item}</span>
               </li>
             ))}
           </ul>
@@ -119,10 +132,10 @@ export default function PeptidePage({ params }: PageProps) {
         </CardHeader>
         <CardContent>
           <ul className="space-y-2">
-            {peptide.side_effects_common.map((effect, index) => (
-              <li key={index} className="flex items-start">
-                <span className="text-yellow-400 mr-2 mt-0.5">•</span>
-                <span className="text-white leading-relaxed">{effect}</span>
+            {peptide.side_effects_common.map((effect, idx) => (
+              <li key={idx} className="flex items-start text-white">
+                <span className="text-yellow-400 mr-2">•</span>
+                <span>{effect}</span>
               </li>
             ))}
           </ul>
@@ -136,10 +149,10 @@ export default function PeptidePage({ params }: PageProps) {
         </CardHeader>
         <CardContent>
           <ul className="space-y-2">
-            {peptide.who_should_avoid.map((item, index) => (
-              <li key={index} className="flex items-start">
-                <span className="text-red-400 mr-2 mt-0.5">⚠</span>
-                <span className="text-white leading-relaxed">{item}</span>
+            {peptide.who_should_avoid.map((item, idx) => (
+              <li key={idx} className="flex items-start text-white">
+                <span className="text-red-400 mr-2">⚠</span>
+                <span>{item}</span>
               </li>
             ))}
           </ul>
@@ -149,33 +162,30 @@ export default function PeptidePage({ params }: PageProps) {
       {/* Interactions */}
       <Card>
         <CardHeader>
-          <CardTitle>Drug & Supplement Interactions</CardTitle>
+          <CardTitle>Interactions & Precautions</CardTitle>
         </CardHeader>
         <CardContent>
           <p className="text-white leading-relaxed">{peptide.interactions_notes}</p>
         </CardContent>
       </Card>
 
-      {/* Dosing Information */}
+      {/* Dosing Info */}
       <Card>
         <CardHeader>
-          <CardTitle>Dosing Information</CardTitle>
+          <CardTitle>Dosing Information from Literature</CardTitle>
         </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="bg-yellow-600/20 border border-yellow-600/30 rounded-lg p-4">
-            <p className="text-sm text-yellow-200 leading-relaxed">
-              <strong>Important:</strong> The information below is descriptive only and based on literature review. 
-              Always consult a licensed healthcare provider for dosing guidance specific to your situation.
-            </p>
-          </div>
-          <p className="text-white leading-relaxed">{peptide.dosing_ranges_literature}</p>
+        <CardContent>
+          <p className="text-white leading-relaxed mb-4">{peptide.dosing_ranges_literature}</p>
+          <p className="text-sm text-slate-400 italic">
+            This is descriptive information only. Always consult a licensed healthcare provider for dosing guidance.
+          </p>
         </CardContent>
       </Card>
 
       {/* Reconstitution */}
       <Card>
         <CardHeader>
-          <CardTitle>Reconstitution Reference</CardTitle>
+          <CardTitle>Reconstitution</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
           <div>
@@ -184,29 +194,21 @@ export default function PeptidePage({ params }: PageProps) {
           </div>
           <div>
             <p className="text-sm text-slate-400 mb-2">Common diluent volumes:</p>
-            <div className="flex flex-wrap gap-2">
-              {peptide.reconstitution.common_diluents_ml.map((ml) => (
-                <span key={ml} className="px-3 py-1 bg-slate-700 text-white rounded-lg text-sm font-medium">
-                  {ml} mL
-                </span>
-              ))}
-            </div>
+            <p className="text-white font-medium">
+              {peptide.reconstitution.common_diluents_ml.join(' mL, ')} mL
+            </p>
           </div>
           <div>
-            <p className="text-sm text-slate-400 mb-2">Example dose ranges:</p>
-            <div className="flex flex-wrap gap-2">
-              {peptide.reconstitution.example_doses_mg.map((dose) => (
-                <span key={dose} className="px-3 py-1 bg-slate-700 text-white rounded-lg text-sm font-medium">
-                  {dose} mg
-                </span>
-              ))}
-            </div>
+            <p className="text-sm text-slate-400 mb-2">Example doses:</p>
+            <p className="text-white font-medium">
+              {peptide.reconstitution.example_doses_mg.join(' mg, ')} mg
+            </p>
           </div>
           <Link
             href={reconUrl}
-            className="inline-flex items-center px-4 py-2 bg-primary-600 hover:bg-primary-500 text-white rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-dark-800"
+            className="inline-block px-4 py-2 bg-primary-600 hover:bg-primary-500 text-white rounded-lg font-medium transition-colors"
           >
-            Open in Reconstitution Calculator →
+            Open in Calculator →
           </Link>
         </CardContent>
       </Card>
@@ -222,13 +224,9 @@ export default function PeptidePage({ params }: PageProps) {
       </Card>
 
       {/* Last Reviewed */}
-      <p className="text-sm text-slate-500 text-center">
-        Last reviewed: {new Date(peptide.last_reviewed).toLocaleDateString('en-US', { 
-          year: 'numeric', 
-          month: 'long', 
-          day: 'numeric' 
-        })}
-      </p>
+      <div className="text-center text-sm text-slate-400">
+        Last reviewed: {new Date(peptide.last_reviewed).toLocaleDateString()}
+      </div>
     </div>
   );
 }

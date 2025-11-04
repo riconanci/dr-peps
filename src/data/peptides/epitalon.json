@@ -1,0 +1,40 @@
+{
+  "slug": "epitalon",
+  "name": "Epitalon",
+  "aliases": ["Epithalon", "Epithalone", "Aedg"],
+  "category_tags": ["recovery", "sleep", "cognitive"],
+  "typical_route": ["subQ", "IM"],
+  "overview": "A synthetic tetrapeptide studied in Russia for its potential effects on the pineal gland and circadian rhythms. Research has explored its relationship with melatonin production and cellular aging markers, though human clinical data remains limited.",
+  "what_people_seek": ["sleep regulation", "circadian rhythm support", "cellular health", "longevity research interest"],
+  "evidence_level": "Anecdotal",
+  "risk_level": "Unknown",
+  "side_effects_common": ["injection site reactions", "drowsiness or alertness changes", "headache", "vivid dreams"],
+  "who_should_avoid": ["pregnancy or breastfeeding", "active malignancy", "severe autoimmune conditions without medical guidance", "individuals on immunosuppressive therapy"],
+  "interactions_notes": "Very limited interaction data available. May affect sleep-wake cycles and melatonin. Exercise caution with sleep medications, antidepressants, and immune-modulating drugs. Comprehensive medication review essential.",
+  "dosing_ranges_literature": "Russian research has used protocols ranging from 5-10 mg administered over 10-20 day cycles, typically 1-2 times per year. Western clinical validation is lacking.",
+  "reconstitution": {
+    "vial_total_mg": 10,
+    "common_diluents_ml": [2, 5],
+    "example_doses_mg": [5, 10]
+  },
+  "storage_notes": "Store unreconstituted peptide in freezer (-20°C or colder). After reconstitution with bacteriostatic water, store refrigerated and use within 2-3 weeks.",
+  "references": [
+    {
+      "id": "ref1",
+      "title": "Epitalon and pineal gland function",
+      "source": "Review",
+      "year": 2003,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Russian research on epitalon's effects on circadian regulation."
+    },
+    {
+      "id": "ref2",
+      "title": "Peptide bioregulators and aging",
+      "source": "Other",
+      "year": 2016,
+      "url": "https://example.com",
+      "note": "Overview of peptide research in gerontology, primarily from Russian sources."
+    }
+  ],
+  "last_reviewed": "2025-11-03"
+}

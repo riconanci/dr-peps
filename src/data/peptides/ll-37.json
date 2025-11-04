@@ -1,0 +1,40 @@
+{
+  "slug": "ll-37",
+  "name": "LL-37",
+  "aliases": ["Cathelicidin", "hCAP-18"],
+  "category_tags": ["recovery", "gut", "skin"],
+  "typical_route": ["subQ", "topical"],
+  "overview": "A human antimicrobial peptide naturally produced by the body as part of the innate immune response. Research has explored its antimicrobial properties and potential role in wound healing and immune modulation.",
+  "what_people_seek": ["immune defense support", "wound healing", "skin health", "antimicrobial properties"],
+  "evidence_level": "Preliminary",
+  "risk_level": "Unknown",
+  "side_effects_common": ["injection site reactions", "local irritation (topical)", "limited human trial data"],
+  "who_should_avoid": ["pregnancy or breastfeeding", "active infections without medical supervision", "severe immunodeficiency or immunosuppression"],
+  "interactions_notes": "Very limited interaction data. May affect immune responses and inflammation. Discuss all medications with clinician, especially antibiotics and immune-modulating drugs.",
+  "dosing_ranges_literature": "Human clinical data is extremely limited. Preclinical research has explored a wide range of concentrations. Standardized dosing protocols have not been established.",
+  "reconstitution": {
+    "vial_total_mg": 5,
+    "common_diluents_ml": [2, 5],
+    "example_doses_mg": [0.5, 1, 2]
+  },
+  "storage_notes": "Store unreconstituted peptide in freezer (-20°C or colder). After reconstitution, store refrigerated and use within 1-2 weeks. Sensitive to degradation.",
+  "references": [
+    {
+      "id": "ref1",
+      "title": "LL-37: An antimicrobial peptide with pleiotropic functions",
+      "source": "PubMed",
+      "year": 2013,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Review of LL-37's antimicrobial and immunomodulatory properties."
+    },
+    {
+      "id": "ref2",
+      "title": "Cathelicidin in innate immunity",
+      "source": "Review",
+      "year": 2017,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Overview of cathelicidin's role in immune defense and wound healing."
+    }
+  ],
+  "last_reviewed": "2025-11-03"
+}

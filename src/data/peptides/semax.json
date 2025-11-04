@@ -1,0 +1,40 @@
+{
+  "slug": "semax",
+  "name": "Semax",
+  "aliases": ["ACTH(4-10)"],
+  "category_tags": ["cognitive", "recovery"],
+  "typical_route": ["nasal", "subQ"],
+  "overview": "A synthetic peptide developed in Russia based on a fragment of ACTH (adrenocorticotropic hormone). It has been approved in Russia as a nootropic and neuroprotective agent, though it remains experimental in most other countries.",
+  "what_people_seek": ["cognitive enhancement", "focus and memory", "neuroprotection", "mental clarity"],
+  "evidence_level": "Anecdotal",
+  "risk_level": "Unknown",
+  "side_effects_common": ["nasal irritation (nasal form)", "headache", "restlessness or overstimulation", "changes in sleep patterns"],
+  "who_should_avoid": ["pregnancy or breastfeeding", "severe mental health conditions without medical oversight", "individuals with anxiety disorders", "cardiovascular conditions without clearance"],
+  "interactions_notes": "Limited interaction data outside of Russian research. May interact with stimulants, nootropics, and psychiatric medications. May affect stress hormone pathways.",
+  "dosing_ranges_literature": "Russian protocols use nasal administration of 0.5-1 mg per day divided into 2-3 doses. Various concentrations exist (0.1%, 1%). Western clinical validation is lacking.",
+  "reconstitution": {
+    "vial_total_mg": 5,
+    "common_diluents_ml": [5],
+    "example_doses_mg": [0.3, 0.6, 1]
+  },
+  "storage_notes": "Store unreconstituted peptide in freezer (-20°C or colder). After reconstitution, store refrigerated and use within 2-3 weeks. Nasal formulations may have different storage requirements.",
+  "references": [
+    {
+      "id": "ref1",
+      "title": "Semax: neuroprotective and nootropic peptide",
+      "source": "Review",
+      "year": 2011,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Russian research on Semax's cognitive and neuroprotective effects."
+    },
+    {
+      "id": "ref2",
+      "title": "ACTH-derived peptides in brain function",
+      "source": "Other",
+      "year": 2014,
+      "url": "https://example.com",
+      "note": "Overview of ACTH fragment peptides, primarily from Russian sources."
+    }
+  ],
+  "last_reviewed": "2025-11-03"
+}

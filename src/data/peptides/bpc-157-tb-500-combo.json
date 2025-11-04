@@ -1,0 +1,48 @@
+{
+  "slug": "bpc-157-tb-500-combo",
+  "name": "BPC-157 + TB-500 Combo",
+  "aliases": ["BPC/TB Combo", "Recovery Stack"],
+  "category_tags": ["recovery", "joints", "tendons", "gut"],
+  "typical_route": ["subQ"],
+  "overview": "A popular combination of BPC-157 and TB-500 used together for synergistic effects on tissue repair and recovery. Many protocols combine these peptides based on their complementary mechanisms - BPC-157 for localized healing and TB-500 for systemic recovery support.",
+  "what_people_seek": ["enhanced recovery", "joint and tendon support", "combined tissue repair", "injury rehabilitation", "gut and systemic healing"],
+  "evidence_level": "Preliminary",
+  "risk_level": "Unknown",
+  "side_effects_common": ["injection site reactions", "digestion changes", "headache", "lightheadedness", "fatigue (rare)", "potential interactions between compounds"],
+  "who_should_avoid": ["pregnancy or breastfeeding", "active malignancy or history of hormone-sensitive cancers", "significant uncontrolled illness", "those who should avoid either individual peptide"],
+  "interactions_notes": "Limited data on combination interactions. May have additive effects. Review medications and supplements with clinician. If either individual peptide is contraindicated, the combination should be avoided.",
+  "dosing_ranges_literature": "Common protocols combine BPC-157 (250-500 mcg) with TB-500 (2-5 mg) administered together or separately. Frequency varies from daily to 2-3 times per week. Some protocols alternate peptides. Clinical guidance is essential as dosing is not standardized.",
+  "reconstitution": {
+    "vial_total_mg": 7,
+    "common_diluents_ml": [2, 3],
+    "example_doses_mg": [0.5, 1, 2]
+  },
+  "storage_notes": "Store unreconstituted peptides in freezer (-20°C or colder). After reconstitution with bacteriostatic water, store refrigerated and use within 2-3 weeks. May be mixed in same syringe or administered separately.",
+  "references": [
+    {
+      "id": "ref1",
+      "title": "BPC-157 tissue repair mechanisms",
+      "source": "PubMed",
+      "year": 2020,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Preclinical research on BPC-157's effects on healing."
+    },
+    {
+      "id": "ref2",
+      "title": "TB-500 and tissue regeneration",
+      "source": "PubMed",
+      "year": 2018,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Studies on thymosin beta-4 in wound healing and repair."
+    },
+    {
+      "id": "ref3",
+      "title": "Peptide combinations in sports medicine",
+      "source": "Review",
+      "year": 2021,
+      "url": "https://example.com",
+      "note": "Overview of peptide stacking approaches in recovery protocols."
+    }
+  ],
+  "last_reviewed": "2025-11-03"
+}

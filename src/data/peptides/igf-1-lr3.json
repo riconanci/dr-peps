@@ -1,0 +1,40 @@
+{
+  "slug": "igf-1-lr3",
+  "name": "IGF-1 LR3",
+  "aliases": ["Long R3 IGF-I", "Insulin-like Growth Factor-1 Long R3"],
+  "category_tags": ["growth", "recovery", "metabolic"],
+  "typical_route": ["subQ", "IM"],
+  "overview": "A modified version of insulin-like growth factor-1 (IGF-1) with amino acid substitutions that extend its half-life and reduce binding to IGF binding proteins. It has a significantly longer duration of action than native IGF-1.",
+  "what_people_seek": ["muscle growth support", "recovery enhancement", "protein synthesis", "cellular growth"],
+  "evidence_level": "Preliminary",
+  "risk_level": "High",
+  "side_effects_common": ["hypoglycemia risk", "jaw pain", "headache", "joint discomfort", "organ growth concerns with prolonged use"],
+  "who_should_avoid": ["pregnancy or breastfeeding", "active malignancy or cancer history", "diabetic retinopathy", "severe hypoglycemia risk", "adolescents with open growth plates without medical supervision"],
+  "interactions_notes": "Significant risk of hypoglycemia, especially with diabetes medications or insulin. May interact with growth hormone therapies. Requires close monitoring of blood glucose. Comprehensive endocrine evaluation essential before use.",
+  "dosing_ranges_literature": "Research has explored a wide range from 20-100 mcg per day, typically split into multiple doses. Human clinical data is very limited and dosing is not standardized.",
+  "reconstitution": {
+    "vial_total_mg": 1,
+    "common_diluents_ml": [1, 2],
+    "example_doses_mg": [0.02, 0.04, 0.06, 0.1]
+  },
+  "storage_notes": "Store unreconstituted peptide in freezer (-20°C or colder). After reconstitution, store refrigerated and use within 1-2 weeks. Highly sensitive to temperature and pH.",
+  "references": [
+    {
+      "id": "ref1",
+      "title": "Long R3 IGF-I biological activity",
+      "source": "PubMed",
+      "year": 1991,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Early characterization of the modified IGF-1 peptide."
+    },
+    {
+      "id": "ref2",
+      "title": "IGF-1 and metabolic effects",
+      "source": "Review",
+      "year": 2010,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Overview of IGF-1's role in growth and metabolism."
+    }
+  ],
+  "last_reviewed": "2025-11-03"
+}

@@ -1,0 +1,40 @@
+{
+  "slug": "hgh-fragment-176-191",
+  "name": "HGH Fragment 176-191",
+  "aliases": ["Frag 176-191", "HGH Frag", "AOD-9604 precursor"],
+  "category_tags": ["weight", "metabolic"],
+  "typical_route": ["subQ"],
+  "overview": "A modified fragment of human growth hormone (amino acids 176-191) that was researched for its potential fat-reducing effects without the growth-promoting properties of full HGH. Closely related to AOD-9604.",
+  "what_people_seek": ["fat metabolism support", "body composition", "weight management", "lipolysis"],
+  "evidence_level": "Preliminary",
+  "risk_level": "Low",
+  "side_effects_common": ["injection site reactions", "mild headache", "lightheadedness", "temporary fatigue"],
+  "who_should_avoid": ["pregnancy or breastfeeding", "active malignancy", "severe metabolic disorders without medical supervision"],
+  "interactions_notes": "Limited interaction data. May affect fat metabolism. Discuss with clinician if taking diabetes medications, thyroid medications, or other metabolic therapies.",
+  "dosing_ranges_literature": "Research protocols have explored doses ranging from 250-500 mcg administered once or twice daily, typically on an empty stomach before exercise or in the morning.",
+  "reconstitution": {
+    "vial_total_mg": 5,
+    "common_diluents_ml": [2, 5],
+    "example_doses_mg": [0.25, 0.5]
+  },
+  "storage_notes": "Store unreconstituted peptide in freezer (-20°C or colder). After reconstitution with bacteriostatic water, store refrigerated and use within 2-3 weeks.",
+  "references": [
+    {
+      "id": "ref1",
+      "title": "HGH fragment and lipid metabolism",
+      "source": "PubMed",
+      "year": 2000,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Early research on the lipolytic effects of HGH fragments."
+    },
+    {
+      "id": "ref2",
+      "title": "Growth hormone fragments for obesity treatment",
+      "source": "Review",
+      "year": 2004,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Overview of HGH fragment research in weight management."
+    }
+  ],
+  "last_reviewed": "2025-11-03"
+}

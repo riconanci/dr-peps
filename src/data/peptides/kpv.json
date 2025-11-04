@@ -1,0 +1,40 @@
+{
+  "slug": "kpv",
+  "name": "KPV",
+  "aliases": ["Lys-Pro-Val"],
+  "category_tags": ["gut", "recovery"],
+  "typical_route": ["oral", "subQ"],
+  "overview": "A tripeptide (three amino acids) derived from alpha-melanocyte stimulating hormone (α-MSH). Research has explored its anti-inflammatory properties, particularly in the gastrointestinal tract.",
+  "what_people_seek": ["gut inflammation support", "inflammatory bowel conditions", "immune modulation"],
+  "evidence_level": "Preliminary",
+  "risk_level": "Unknown",
+  "side_effects_common": ["minimal side effects reported in limited studies", "mild digestive changes possible"],
+  "who_should_avoid": ["pregnancy or breastfeeding", "active malignancy", "severe autoimmune conditions without medical oversight"],
+  "interactions_notes": "Limited interaction data available. May affect inflammatory pathways. Discuss with clinician if taking immunosuppressive medications or anti-inflammatory drugs.",
+  "dosing_ranges_literature": "Research protocols have explored oral doses of 500-1000 mcg daily, or subcutaneous doses of 200-500 mcg. Human clinical data is very limited.",
+  "reconstitution": {
+    "vial_total_mg": 5,
+    "common_diluents_ml": [2, 5],
+    "example_doses_mg": [0.2, 0.5, 1]
+  },
+  "storage_notes": "Store unreconstituted peptide in freezer (-20°C or colder). After reconstitution, store refrigerated and use within 2-3 weeks.",
+  "references": [
+    {
+      "id": "ref1",
+      "title": "Anti-inflammatory properties of α-MSH peptides",
+      "source": "PubMed",
+      "year": 2015,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Preclinical research on melanocortin peptides and inflammation."
+    },
+    {
+      "id": "ref2",
+      "title": "KPV in inflammatory bowel disease models",
+      "source": "Review",
+      "year": 2018,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Animal model studies exploring KPV's effects on gut inflammation."
+    }
+  ],
+  "last_reviewed": "2025-11-03"
+}

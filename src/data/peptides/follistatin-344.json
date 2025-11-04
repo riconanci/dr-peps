@@ -1,0 +1,40 @@
+{
+  "slug": "follistatin-344",
+  "name": "Follistatin-344",
+  "aliases": ["FS-344", "FST-344"],
+  "category_tags": ["growth", "recovery"],
+  "typical_route": ["subQ", "IM"],
+  "overview": "A naturally occurring protein that binds to and inhibits myostatin, a protein that limits muscle growth. Research has explored its potential role in muscle development and metabolic regulation.",
+  "what_people_seek": ["muscle growth support", "myostatin inhibition", "body composition", "recovery"],
+  "evidence_level": "Preliminary",
+  "risk_level": "Unknown",
+  "side_effects_common": ["injection site reactions", "unknown long-term effects", "limited human safety data"],
+  "who_should_avoid": ["pregnancy or breastfeeding", "active malignancy or cancer history", "hormone-sensitive conditions", "adolescents with open growth plates"],
+  "interactions_notes": "Very limited interaction data. May affect muscle and metabolic pathways. Comprehensive endocrine evaluation essential. Unknown interactions with anabolic agents.",
+  "dosing_ranges_literature": "Human clinical data is extremely limited. Animal research has used varying protocols. No standardized human dosing exists. Gene therapy approaches have also been explored.",
+  "reconstitution": {
+    "vial_total_mg": 1,
+    "common_diluents_ml": [1, 2],
+    "example_doses_mg": [0.1, 0.2]
+  },
+  "storage_notes": "Store unreconstituted peptide in freezer (-20°C or colder). After reconstitution, store refrigerated and use within 1 week. Highly sensitive to degradation.",
+  "references": [
+    {
+      "id": "ref1",
+      "title": "Follistatin and myostatin regulation",
+      "source": "PubMed",
+      "year": 2010,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Preclinical research on follistatin's effects on muscle growth."
+    },
+    {
+      "id": "ref2",
+      "title": "Myostatin inhibition strategies",
+      "source": "Review",
+      "year": 2016,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Overview of myostatin inhibition approaches including follistatin."
+    }
+  ],
+  "last_reviewed": "2025-11-03"
+}

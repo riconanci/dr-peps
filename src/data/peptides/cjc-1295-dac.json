@@ -1,0 +1,40 @@
+{
+  "slug": "cjc-1295-dac",
+  "name": "CJC-1295-DAC",
+  "aliases": ["CJC-1295 with DAC", "Drug Affinity Complex"],
+  "category_tags": ["growth", "recovery", "metabolic"],
+  "typical_route": ["subQ"],
+  "overview": "A modified growth hormone-releasing hormone (GHRH) analog with an added Drug Affinity Complex (DAC) that extends its half-life. This allows for less frequent dosing compared to standard CJC-1295.",
+  "what_people_seek": ["growth hormone optimization", "body composition", "recovery enhancement", "anti-aging effects"],
+  "evidence_level": "Moderate",
+  "risk_level": "Moderate",
+  "side_effects_common": ["injection site reactions", "headache", "flushing", "dizziness", "fatigue", "water retention"],
+  "who_should_avoid": ["pregnancy or breastfeeding", "active malignancy or cancer history", "diabetic retinopathy", "severe illness or post-surgical recovery", "hypersensitivity to components"],
+  "interactions_notes": "May affect glucose metabolism and insulin sensitivity. Can interact with diabetes medications, thyroid medications, and corticosteroids. Comprehensive medication review with clinician required.",
+  "dosing_ranges_literature": "Research protocols have used doses ranging from 0.5-2 mg administered once or twice weekly due to extended half-life from DAC modification.",
+  "reconstitution": {
+    "vial_total_mg": 2,
+    "common_diluents_ml": [2, 3],
+    "example_doses_mg": [0.5, 1, 2]
+  },
+  "storage_notes": "Store unreconstituted peptide in freezer (-20°C or colder). After reconstitution with bacteriostatic water, store refrigerated and use within 2-3 weeks.",
+  "references": [
+    {
+      "id": "ref1",
+      "title": "Modified GRF(1-29) with extended half-life",
+      "source": "PubMed",
+      "year": 2009,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Study on DAC technology and extended peptide half-life."
+    },
+    {
+      "id": "ref2",
+      "title": "Growth hormone releasing peptides in aging",
+      "source": "Review",
+      "year": 2014,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Overview of GHRH analogs and their clinical applications."
+    }
+  ],
+  "last_reviewed": "2025-11-03"
+}

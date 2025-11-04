@@ -1,0 +1,40 @@
+{
+  "slug": "ghrp-2",
+  "name": "GHRP-2",
+  "aliases": ["Growth Hormone Releasing Peptide-2"],
+  "category_tags": ["growth", "recovery", "metabolic"],
+  "typical_route": ["subQ", "IM"],
+  "overview": "A synthetic hexapeptide that stimulates growth hormone release from the pituitary gland. It is a second-generation growth hormone secretagogue with less hunger stimulation than GHRP-6.",
+  "what_people_seek": ["growth hormone optimization", "recovery support", "body composition", "sleep quality"],
+  "evidence_level": "Moderate",
+  "risk_level": "Moderate",
+  "side_effects_common": ["water retention", "increased hunger (less than GHRP-6)", "tingling or numbness", "fatigue", "elevated cortisol (transient)"],
+  "who_should_avoid": ["pregnancy or breastfeeding", "active cancer or tumor history", "uncontrolled diabetes", "severe illness requiring hospitalization"],
+  "interactions_notes": "May interact with medications affecting growth hormone or blood glucose. Can transiently increase cortisol and prolactin. Consult clinician if taking diabetes medications or corticosteroids.",
+  "dosing_ranges_literature": "Research protocols have used doses ranging from 100-300 mcg administered 1-3 times daily, typically on an empty stomach.",
+  "reconstitution": {
+    "vial_total_mg": 5,
+    "common_diluents_ml": [2, 5],
+    "example_doses_mg": [0.1, 0.2, 0.3]
+  },
+  "storage_notes": "Store unreconstituted peptide in freezer (-20°C or colder). After reconstitution with bacteriostatic water, store refrigerated and use within 2-3 weeks.",
+  "references": [
+    {
+      "id": "ref1",
+      "title": "GHRP-2 and growth hormone secretion",
+      "source": "PubMed",
+      "year": 1997,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Clinical studies on GHRP-2's effects on GH release."
+    },
+    {
+      "id": "ref2",
+      "title": "Growth hormone secretagogues comparison",
+      "source": "Review",
+      "year": 2008,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Comparative analysis of various GH-releasing peptides."
+    }
+  ],
+  "last_reviewed": "2025-11-03"
+}

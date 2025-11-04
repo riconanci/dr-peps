@@ -1,0 +1,40 @@
+{
+  "slug": "tesamorelin",
+  "name": "Tesamorelin",
+  "aliases": ["Egrifta", "TH9507"],
+  "category_tags": ["metabolic", "growth", "weight"],
+  "typical_route": ["subQ"],
+  "overview": "A synthetic growth hormone-releasing hormone (GHRH) analog that has been FDA-approved for reducing excess abdominal fat in HIV patients with lipodystrophy. It stimulates the pituitary gland to produce and release growth hormone.",
+  "what_people_seek": ["reduction in visceral adipose tissue", "body composition improvement", "metabolic health support"],
+  "evidence_level": "Strong",
+  "risk_level": "Moderate",
+  "side_effects_common": ["injection site reactions", "joint pain", "muscle pain", "peripheral edema", "carpal tunnel symptoms"],
+  "who_should_avoid": ["pregnancy or breastfeeding", "active malignancy or history of cancer", "critical illness or post-surgery recovery", "diabetic retinopathy", "hypersensitivity to tesamorelin or mannitol"],
+  "interactions_notes": "May affect glucose metabolism and insulin sensitivity. Discuss with clinician if taking diabetes medications, corticosteroids, or other hormonal therapies.",
+  "dosing_ranges_literature": "FDA-approved dosing for lipodystrophy is 2 mg once daily via subcutaneous injection. Clinical studies have primarily used this standardized dose.",
+  "reconstitution": {
+    "vial_total_mg": 2,
+    "common_diluents_ml": [2.2],
+    "example_doses_mg": [2]
+  },
+  "storage_notes": "Store unreconstituted vials refrigerated at 2-8°C (36-46°F). After reconstitution, use immediately or store refrigerated for up to 3 hours. Protect from light.",
+  "references": [
+    {
+      "id": "ref1",
+      "title": "Tesamorelin for HIV-associated lipodystrophy",
+      "source": "PubMed",
+      "year": 2010,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Clinical trial data supporting FDA approval for visceral adipose tissue reduction."
+    },
+    {
+      "id": "ref2",
+      "title": "Effects of tesamorelin on body composition",
+      "source": "Review",
+      "year": 2013,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Review of tesamorelin's effects on abdominal fat and metabolic parameters."
+    }
+  ],
+  "last_reviewed": "2025-11-03"
+}

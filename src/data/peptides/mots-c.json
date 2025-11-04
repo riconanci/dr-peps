@@ -1,0 +1,40 @@
+{
+  "slug": "mots-c",
+  "name": "MOTS-C",
+  "aliases": ["Mitochondrial ORF of the 12S rRNA Type-C"],
+  "category_tags": ["metabolic", "recovery", "cognitive"],
+  "typical_route": ["subQ", "IM"],
+  "overview": "A mitochondrial-derived peptide that plays a role in metabolic regulation and cellular energy. It is a relatively new area of research exploring mitochondrial function and metabolic health.",
+  "what_people_seek": ["metabolic function support", "exercise endurance", "insulin sensitivity", "mitochondrial health"],
+  "evidence_level": "Preliminary",
+  "risk_level": "Unknown",
+  "side_effects_common": ["injection site reactions", "fatigue (initial)", "mild headache"],
+  "who_should_avoid": ["pregnancy or breastfeeding", "active malignancy", "severe cardiovascular disease without medical clearance", "individuals with metabolic disorders without clinician guidance"],
+  "interactions_notes": "Limited interaction data available. Exercise caution with diabetes medications and metabolic therapies. Discuss all medications with a clinician.",
+  "dosing_ranges_literature": "Emerging research has explored doses ranging from 5-15 mg administered 2-3 times per week. Human studies are limited and protocols vary.",
+  "reconstitution": {
+    "vial_total_mg": 10,
+    "common_diluents_ml": [2, 5],
+    "example_doses_mg": [5, 10, 15]
+  },
+  "storage_notes": "Store unreconstituted peptide in freezer (-20°C or colder). After reconstitution with bacteriostatic water, store refrigerated and use within 2-3 weeks.",
+  "references": [
+    {
+      "id": "ref1",
+      "title": "MOTS-c: A mitochondrial-encoded regulator of the nucleus",
+      "source": "PubMed",
+      "year": 2015,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Initial discovery and characterization of MOTS-c peptide."
+    },
+    {
+      "id": "ref2",
+      "title": "MOTS-c and metabolic homeostasis",
+      "source": "Review",
+      "year": 2020,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Review of MOTS-c's role in metabolism and potential therapeutic applications."
+    }
+  ],
+  "last_reviewed": "2025-11-03"
+}

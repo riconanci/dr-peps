@@ -1,0 +1,40 @@
+{
+  "slug": "selank",
+  "name": "Selank",
+  "aliases": ["TP-7"],
+  "category_tags": ["cognitive", "recovery"],
+  "typical_route": ["nasal", "subQ"],
+  "overview": "A synthetic peptide developed in Russia based on the naturally occurring peptide tuftsin. It has been approved in Russia as an anxiolytic and nootropic, though it remains experimental in most other countries.",
+  "what_people_seek": ["anxiety management", "cognitive function", "focus and concentration", "mood support"],
+  "evidence_level": "Anecdotal",
+  "risk_level": "Unknown",
+  "side_effects_common": ["nasal irritation (nasal form)", "mild sedation or drowsiness", "headache", "changes in mood"],
+  "who_should_avoid": ["pregnancy or breastfeeding", "severe mental health conditions without psychiatric oversight", "individuals on psychiatric medications without medical guidance"],
+  "interactions_notes": "Limited interaction data outside of Russian research. May interact with anxiolytics, antidepressants, and other psychiatric medications. Comprehensive psychiatric and medication review essential.",
+  "dosing_ranges_literature": "Russian protocols use nasal administration of 2-3 mg per day divided into 2-3 doses. Subcutaneous protocols vary. Western clinical validation is lacking.",
+  "reconstitution": {
+    "vial_total_mg": 5,
+    "common_diluents_ml": [5],
+    "example_doses_mg": [0.25, 0.5, 1]
+  },
+  "storage_notes": "Store unreconstituted peptide in freezer (-20°C or colder). After reconstitution, store refrigerated and use within 2-3 weeks. Nasal formulations may have different storage requirements.",
+  "references": [
+    {
+      "id": "ref1",
+      "title": "Selank: anxiolytic and nootropic peptide",
+      "source": "Review",
+      "year": 2009,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Russian research on Selank's anxiolytic and cognitive effects."
+    },
+    {
+      "id": "ref2",
+      "title": "Tuftsin-based peptides in neuromodulation",
+      "source": "Other",
+      "year": 2015,
+      "url": "https://example.com",
+      "note": "Overview of tuftsin-derived peptides, primarily from Russian sources."
+    }
+  ],
+  "last_reviewed": "2025-11-03"
+}

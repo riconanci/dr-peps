@@ -1,0 +1,40 @@
+{
+  "slug": "5-amino-1mq",
+  "name": "5-Amino-1MQ",
+  "aliases": ["5-Amino-1-methylquinolinium"],
+  "category_tags": ["weight", "metabolic"],
+  "typical_route": ["oral", "subQ"],
+  "overview": "A small molecule that inhibits the enzyme NNMT (nicotinamide N-methyltransferase). Research has explored its potential effects on metabolism and energy expenditure in preclinical models.",
+  "what_people_seek": ["metabolic enhancement", "weight management", "energy expenditure", "NAD+ optimization"],
+  "evidence_level": "Preliminary",
+  "risk_level": "Unknown",
+  "side_effects_common": ["limited human data", "injection site reactions (injectable)", "digestive changes possible (oral)"],
+  "who_should_avoid": ["pregnancy or breastfeeding", "liver disease or impaired liver function", "metabolic disorders without clinician oversight"],
+  "interactions_notes": "Very limited interaction data. May affect methylation and NAD+ pathways. Discuss with clinician if taking niacin supplements, NAD+ boosters, or medications affecting liver metabolism.",
+  "dosing_ranges_literature": "Human clinical data is extremely limited. Animal research has explored various doses. Anecdotal protocols range widely with no established standard.",
+  "reconstitution": {
+    "vial_total_mg": 50,
+    "common_diluents_ml": [5, 10],
+    "example_doses_mg": [5, 10, 25]
+  },
+  "storage_notes": "Store unreconstituted compound in cool, dry place away from light. After reconstitution (if injectable form), store refrigerated and use within 2 weeks.",
+  "references": [
+    {
+      "id": "ref1",
+      "title": "NNMT inhibition and metabolic effects",
+      "source": "PubMed",
+      "year": 2017,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Preclinical research on NNMT inhibitors and energy metabolism."
+    },
+    {
+      "id": "ref2",
+      "title": "Nicotinamide metabolism and obesity",
+      "source": "Review",
+      "year": 2019,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Overview of NNMT's role in metabolic regulation."
+    }
+  ],
+  "last_reviewed": "2025-11-03"
+}

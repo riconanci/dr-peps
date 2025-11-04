@@ -1,0 +1,40 @@
+{
+  "slug": "dsip",
+  "name": "DSIP",
+  "aliases": ["Delta Sleep-Inducing Peptide"],
+  "category_tags": ["sleep", "recovery"],
+  "typical_route": ["subQ", "IM"],
+  "overview": "A neuropeptide first isolated in the 1970s from rabbits in delta-wave sleep. Research has explored its effects on sleep regulation and stress response, though human clinical data remains limited.",
+  "what_people_seek": ["sleep quality", "stress management", "recovery support", "circadian rhythm regulation"],
+  "evidence_level": "Preliminary",
+  "risk_level": "Unknown",
+  "side_effects_common": ["drowsiness", "injection site reactions", "vivid dreams", "grogginess upon waking"],
+  "who_should_avoid": ["pregnancy or breastfeeding", "severe sleep disorders without sleep specialist guidance", "individuals operating heavy machinery", "psychiatric conditions without medical oversight"],
+  "interactions_notes": "Limited interaction data. May interact with sleep medications, sedatives, anxiolytics, and alcohol. May affect stress hormone regulation. Avoid driving or operating machinery after use.",
+  "dosing_ranges_literature": "Research protocols have explored doses ranging from 1-5 mg administered before bedtime. Human clinical studies are limited and protocols vary significantly.",
+  "reconstitution": {
+    "vial_total_mg": 2,
+    "common_diluents_ml": [2],
+    "example_doses_mg": [1, 2]
+  },
+  "storage_notes": "Store unreconstituted peptide in freezer (-20°C or colder). After reconstitution with bacteriostatic water, store refrigerated and use within 2-3 weeks.",
+  "references": [
+    {
+      "id": "ref1",
+      "title": "DSIP and sleep regulation",
+      "source": "PubMed",
+      "year": 1977,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Early research on DSIP isolation and sleep-inducing properties."
+    },
+    {
+      "id": "ref2",
+      "title": "Sleep peptides: mechanisms and effects",
+      "source": "Review",
+      "year": 2008,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Review of sleep-regulating peptides including DSIP."
+    }
+  ],
+  "last_reviewed": "2025-11-03"
+}

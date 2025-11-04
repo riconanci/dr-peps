@@ -61,6 +61,11 @@ export default function LibraryPage() {
     )
   ).sort();
 
+  // Get unique routes
+  const routes = Array.from(
+    new Set(allPeptides.flatMap((p) => p.typical_route))
+  ).sort();
+
   const filteredPeptides = useMemo(() => {
     return allPeptides.filter((peptide) => {
       // Search filter
@@ -72,17 +77,19 @@ export default function LibraryPage() {
         if (!matchesName && !matchesAlias && !matchesTag) return false;
       }
 
-      // Benefits filter (normalize skin to skin & hair)
+      // Benefits filter - CHANGED TO AND LOGIC
+      // Now requires ALL selected benefits to be present
       if (selectedBenefits.length > 0) {
         const normalizedTags = peptide.category_tags.map((tag) =>
           tag === 'skin' ? 'skin & hair' : tag
         );
-        if (!selectedBenefits.some((benefit) => normalizedTags.includes(benefit))) {
+        // Changed from .some() to .every() for AND logic
+        if (!selectedBenefits.every((benefit) => normalizedTags.includes(benefit))) {
           return false;
         }
       }
 
-      // Routes filter
+      // Routes filter - OR logic (peptide needs at least ONE selected route)
       if (selectedRoutes.length > 0) {
         if (!selectedRoutes.some((route) => peptide.typical_route.includes(route))) {
           return false;
@@ -112,6 +119,7 @@ export default function LibraryPage() {
   };
 
   const hasActiveFilters = selectedBenefits.length > 0 || selectedRoutes.length > 0 || searchQuery;
+  const activeFilterCount = selectedBenefits.length + selectedRoutes.length + (searchQuery ? 1 : 0);
 
   return (
     <div className="container mx-auto px-4 py-8 space-y-8">
@@ -126,106 +134,93 @@ export default function LibraryPage() {
       <SearchInput
         value={searchQuery}
         onChange={setSearchQuery}
-        placeholder="Search by name or benefit..."
+        placeholder="Search peptides by name or tag..."
       />
 
       {/* Filters Container */}
-      <div className="card border-2 border-primary-500/30">
-        <div className="border-b border-slate-700">
-          <button
-            onClick={() => setFiltersOpen(!filtersOpen)}
-            className="w-full flex items-center justify-between p-4 text-left focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-t-lg"
-            aria-expanded={filtersOpen}
-          >
-            <div className="flex items-center gap-3">
-              <span className="text-base font-semibold text-slate-100 uppercase tracking-wider">
-                Filters
-              </span>
-              {hasActiveFilters && (
-                <span className="px-2 py-1 text-xs font-medium bg-primary-600 text-white rounded-full">
-                  {(selectedBenefits.length + selectedRoutes.length) + (searchQuery ? 1 : 0)}
+      <div className="bg-slate-800 border border-slate-700 rounded-lg p-6 space-y-6">
+        {/* Filter Header */}
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => setFiltersOpen(!filtersOpen)}
+              className="flex items-center gap-2 text-slate-100 font-semibold hover:text-primary-400 transition-colors"
+              aria-label={filtersOpen ? 'Collapse filters' : 'Expand filters'}
+            >
+              <span>Filters</span>
+              {activeFilterCount > 0 && (
+                <span className="bg-primary-600 text-white text-xs font-bold px-2 py-1 rounded-full">
+                  {activeFilterCount}
                 </span>
               )}
-            </div>
-            <div className="flex items-center gap-3">
-              {hasActiveFilters && (
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    clearFilters();
-                  }}
-                  className="text-sm text-primary-400 hover:text-primary-300 font-medium transition-colors"
-                >
-                  Clear all
-                </button>
-              )}
-              <svg
-                className={`h-5 w-5 text-slate-400 transition-transform ${
-                  filtersOpen ? 'rotate-180' : ''
-                }`}
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </div>
-          </button>
+              <span className="text-slate-400">{filtersOpen ? '▼' : '▶'}</span>
+            </button>
+          </div>
+          {hasActiveFilters && (
+            <button
+              onClick={clearFilters}
+              className="text-sm text-primary-400 hover:text-primary-300 font-medium transition-colors"
+            >
+              Clear all
+            </button>
+          )}
         </div>
 
+        {/* Filter Sections */}
         {filtersOpen && (
-          <div className="p-4 space-y-6">
-            {/* Benefits Section */}
+          <div className="space-y-6">
+            {/* Benefits Filter */}
             <div className="space-y-3">
-              <h3 className="text-sm font-semibold text-slate-100 uppercase tracking-wider">
-                Benefits
+              <h3 className="text-sm font-semibold text-slate-300 uppercase tracking-wide">
+                Filter by Benefits
+                {selectedBenefits.length > 0 && (
+                  <span className="ml-2 text-xs text-slate-400">
+                    (Showing peptides with ALL selected)
+                  </span>
+                )}
               </h3>
               <div className="flex flex-wrap gap-2">
                 {benefits.map((benefit) => (
                   <button
                     key={benefit}
                     onClick={() => toggleBenefit(benefit)}
-                    className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 ${
+                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                       selectedBenefits.includes(benefit)
-                        ? 'bg-primary-600 text-white'
-                        : 'bg-dark-700 text-slate-300 hover:bg-dark-600'
+                        ? 'bg-primary-600 text-white ring-2 ring-primary-400'
+                        : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
                     }`}
-                    aria-pressed={selectedBenefits.includes(benefit)}
                   >
-                    {benefitIcons[benefit]?.icon || '📌'} {benefit}
+                    <span className="mr-2">{benefitIcons[benefit]?.icon || '📌'}</span>
+                    {benefit}
                   </button>
                 ))}
               </div>
             </div>
 
-            {/* Administration Section */}
+            {/* Administration Route Filter */}
             <div className="space-y-3">
-              <h3 className="text-sm font-semibold text-slate-100 uppercase tracking-wider">
-                Administration
+              <h3 className="text-sm font-semibold text-slate-300 uppercase tracking-wide">
+                Filter by Administration
               </h3>
               <div className="flex flex-wrap gap-2">
-                <button
-                  onClick={() => toggleRoute('subQ')}
-                  className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 ${
-                    selectedRoutes.includes('subQ')
-                      ? 'bg-primary-600 text-white'
-                      : 'bg-dark-700 text-slate-300 hover:bg-dark-600'
-                  }`}
-                  aria-pressed={selectedRoutes.includes('subQ')}
-                >
-                  💉 SubQ
-                </button>
-                <button
-                  onClick={() => toggleRoute('oral')}
-                  className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 ${
-                    selectedRoutes.includes('oral')
-                      ? 'bg-primary-600 text-white'
-                      : 'bg-dark-700 text-slate-300 hover:bg-dark-600'
-                  }`}
-                  aria-pressed={selectedRoutes.includes('oral')}
-                >
-                  💊 Oral
-                </button>
+                {routes.map((route) => (
+                  <button
+                    key={route}
+                    onClick={() => toggleRoute(route)}
+                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                      selectedRoutes.includes(route)
+                        ? 'bg-blue-600 text-white ring-2 ring-blue-400'
+                        : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                    }`}
+                  >
+                    {route === 'subQ' && '💉 SubQ'}
+                    {route === 'oral' && '💊 Oral'}
+                    {route === 'nasal' && '👃🏼 Nasal'}
+                    {route === 'topical' && '🧴 Topical'}
+                    {route === 'IM' && '💉 IM'}
+                    {!['subQ', 'oral', 'nasal', 'topical', 'IM'].includes(route) && route}
+                  </button>
+                ))}
               </div>
             </div>
           </div>
@@ -234,21 +229,55 @@ export default function LibraryPage() {
 
       {/* Results */}
       <div className="space-y-4">
-        <p className="text-sm text-slate-400">
-          Showing {filteredPeptides.length} of {allPeptides.length} peptides
-        </p>
+        <div className="flex items-center justify-between">
+          <p className="text-slate-400">
+            Showing {filteredPeptides.length} of {allPeptides.length} peptides
+          </p>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Current URL params for passing to peptide cards */}
+        <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {filteredPeptides.map((peptide) => {
-            // Normalize tags for display
+            // Normalize "skin" to "skin & hair" for display
             const normalizedTags = peptide.category_tags.map((tag) =>
               tag === 'skin' ? 'skin & hair' : tag
             );
+            
+            // Build the link with current filter params
+            const currentParams = new URLSearchParams();
+            if (searchQuery) currentParams.set('search', searchQuery);
+            if (selectedBenefits.length > 0) currentParams.set('benefits', selectedBenefits.join(','));
+            if (selectedRoutes.length > 0) currentParams.set('routes', selectedRoutes.join(','));
+            const returnUrl = currentParams.toString() ? `?${currentParams.toString()}` : '';
+            
             return (
-              <Link key={peptide.slug} href={`/p/${peptide.slug}`}>
+              <Link 
+                key={peptide.slug} 
+                href={`/p/${peptide.slug}${returnUrl ? `?return=${encodeURIComponent(returnUrl)}` : ''}`}
+              >
                 <Card hover className="h-full">
                   <CardHeader>
                     <CardTitle>{peptide.name}</CardTitle>
+                    
+                    {/* Administration Routes - Right after name */}
+                    <div className="flex flex-wrap gap-2 mt-2">
+                      {peptide.typical_route.map((route) => (
+                        <span
+                          key={route}
+                          className="px-2 py-1 bg-blue-600/20 border border-blue-500/30 text-blue-300 rounded text-xs font-medium"
+                          title={`Administration: ${route}`}
+                        >
+                          {route === 'subQ' && '💉 SubQ'}
+                          {route === 'oral' && '💊 Oral'}
+                          {route === 'nasal' && '👃 Nasal'}
+                          {route === 'topical' && '🧴 Topical'}
+                          {route === 'IM' && '💉 IM'}
+                          {!['subQ', 'oral', 'nasal', 'topical', 'IM'].includes(route) && route}
+                        </span>
+                      ))}
+                    </div>
+                    
+                    {/* Evidence and Risk badges */}
                     <div className="flex flex-wrap gap-2 mt-2">
                       <EvidenceBadge level={peptide.evidence_level} />
                       <RiskBadge level={peptide.risk_level} />
@@ -256,6 +285,8 @@ export default function LibraryPage() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-sm text-slate-300 mb-3 line-clamp-2">{peptide.overview}</p>
+                    
+                    {/* Benefit Icons */}
                     <div className="flex flex-wrap gap-2">
                       {normalizedTags.map((tag) => (
                         <span

@@ -1,0 +1,40 @@
+{
+  "slug": "thymosin-alpha-1",
+  "name": "Thymosin Alpha-1",
+  "aliases": ["Tα1", "Thymalfasin", "Zadaxin"],
+  "category_tags": ["recovery", "metabolic"],
+  "typical_route": ["subQ"],
+  "overview": "A thymic peptide that has been approved in several countries for treating certain immune-related conditions. Research has explored its role in immune system modulation and cellular function.",
+  "what_people_seek": ["immune system support", "recovery enhancement", "cellular health"],
+  "evidence_level": "Moderate",
+  "risk_level": "Low",
+  "side_effects_common": ["injection site reactions", "mild fatigue", "headache", "nausea (rare)"],
+  "who_should_avoid": ["pregnancy or breastfeeding", "severe autoimmune conditions without medical guidance", "organ transplant recipients on immunosuppression"],
+  "interactions_notes": "May interact with immunosuppressive medications and immune-modulating therapies. Comprehensive medication review required, especially for those with autoimmune conditions or on biologics.",
+  "dosing_ranges_literature": "Clinical studies have used 1.6 mg administered subcutaneously twice weekly, though protocols vary by indication and region.",
+  "reconstitution": {
+    "vial_total_mg": 1.6,
+    "common_diluents_ml": [1],
+    "example_doses_mg": [1.6]
+  },
+  "storage_notes": "Store unreconstituted peptide refrigerated at 2-8°C. After reconstitution, use immediately or store refrigerated for up to 24 hours.",
+  "references": [
+    {
+      "id": "ref1",
+      "title": "Thymosin alpha-1 as a clinical immunomodulator",
+      "source": "PubMed",
+      "year": 2011,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Review of clinical applications and immune modulation mechanisms."
+    },
+    {
+      "id": "ref2",
+      "title": "Safety and efficacy of thymosin alpha-1",
+      "source": "Review",
+      "year": 2018,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Meta-analysis of thymosin alpha-1 use across various conditions."
+    }
+  ],
+  "last_reviewed": "2025-11-03"
+}

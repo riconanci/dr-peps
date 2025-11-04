@@ -1,0 +1,40 @@
+{
+  "slug": "ghk-cu",
+  "name": "GHK-Cu",
+  "aliases": ["Copper Peptide", "GHK-Copper"],
+  "category_tags": ["skin", "recovery"],
+  "typical_route": ["topical", "subQ"],
+  "overview": "A copper-binding peptide naturally found in human plasma, saliva, and urine. It has been extensively studied for skin health and wound healing, with some topical formulations available commercially.",
+  "what_people_seek": ["skin rejuvenation", "wound healing", "collagen production", "hair health"],
+  "evidence_level": "Moderate",
+  "risk_level": "Low",
+  "side_effects_common": ["skin irritation (topical)", "injection site reactions (injectable)", "copper sensitivity (rare)"],
+  "who_should_avoid": ["pregnancy or breastfeeding", "copper metabolism disorders (Wilson's disease)", "copper allergies or sensitivities"],
+  "interactions_notes": "May interact with copper supplements or medications affecting copper metabolism. Generally well-tolerated topically. Discuss with clinician if using other copper-containing products.",
+  "dosing_ranges_literature": "Topical formulations typically use 0.05-2% concentrations. Subcutaneous injection protocols in research have varied from 1-10 mg, but topical use is more common and established.",
+  "reconstitution": {
+    "vial_total_mg": 50,
+    "common_diluents_ml": [5, 10],
+    "example_doses_mg": [1, 5, 10]
+  },
+  "storage_notes": "Store unreconstituted peptide in freezer (-20°C or colder). After reconstitution, store refrigerated and use within 2-3 weeks. Protect from light.",
+  "references": [
+    {
+      "id": "ref1",
+      "title": "GHK-Cu in skin remodeling and wound healing",
+      "source": "PubMed",
+      "year": 2012,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Review of GHK-Cu's effects on collagen synthesis and tissue repair."
+    },
+    {
+      "id": "ref2",
+      "title": "Copper peptides in cosmetic applications",
+      "source": "Review",
+      "year": 2018,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Overview of copper peptide use in skincare and anti-aging."
+    }
+  ],
+  "last_reviewed": "2025-11-03"
+}

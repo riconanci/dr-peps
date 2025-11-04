@@ -1,0 +1,40 @@
+{
+  "slug": "pt-141",
+  "name": "PT-141",
+  "aliases": ["Bremelanotide", "Vyleesi"],
+  "category_tags": ["libido"],
+  "typical_route": ["subQ", "nasal"],
+  "overview": "A melanocortin receptor agonist FDA-approved for treating hypoactive sexual desire disorder (HSDD) in premenopausal women. It acts through the central nervous system rather than directly on vascular tissue.",
+  "what_people_seek": ["sexual desire enhancement", "libido support", "arousal function"],
+  "evidence_level": "Strong",
+  "risk_level": "Moderate",
+  "side_effects_common": ["nausea", "flushing", "injection site reactions", "headache", "nasal congestion (nasal form)", "temporary increase in blood pressure"],
+  "who_should_avoid": ["pregnancy or breastfeeding", "uncontrolled hypertension or cardiovascular disease", "hypersensitivity to bremelanotide", "history of melanoma or suspicious skin lesions"],
+  "interactions_notes": "May interact with blood pressure medications. Can cause transient increases in blood pressure and heart rate. Comprehensive cardiovascular assessment recommended. Avoid use within 24 hours of alcohol consumption.",
+  "dosing_ranges_literature": "FDA-approved dosing is 1.75 mg subcutaneously at least 45 minutes before anticipated sexual activity, no more than one dose in 24 hours or 8 doses per month.",
+  "reconstitution": {
+    "vial_total_mg": 10,
+    "common_diluents_ml": [2, 5],
+    "example_doses_mg": [1.75, 2]
+  },
+  "storage_notes": "Store unreconstituted peptide in freezer (-20°C or colder). After reconstitution with bacteriostatic water, store refrigerated and use within 2-3 weeks. FDA-approved product comes pre-filled.",
+  "references": [
+    {
+      "id": "ref1",
+      "title": "Bremelanotide for HSDD in premenopausal women",
+      "source": "PubMed",
+      "year": 2019,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Phase 3 clinical trials supporting FDA approval."
+    },
+    {
+      "id": "ref2",
+      "title": "Melanocortin receptor agonists and sexual function",
+      "source": "Review",
+      "year": 2020,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Mechanism of action and clinical efficacy review."
+    }
+  ],
+  "last_reviewed": "2025-11-03"
+}

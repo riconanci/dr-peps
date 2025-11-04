@@ -1,0 +1,40 @@
+{
+  "slug": "hexarelin",
+  "name": "Hexarelin",
+  "aliases": ["Examorelin", "HEX"],
+  "category_tags": ["growth", "recovery", "metabolic"],
+  "typical_route": ["subQ", "IM"],
+  "overview": "A synthetic hexapeptide and potent growth hormone secretagogue. Research has also explored its potential cardioprotective effects beyond growth hormone stimulation.",
+  "what_people_seek": ["growth hormone optimization", "cardiovascular support", "recovery enhancement", "body composition"],
+  "evidence_level": "Moderate",
+  "risk_level": "Moderate",
+  "side_effects_common": ["water retention", "increased hunger", "tingling sensations", "elevated cortisol and prolactin", "desensitization with chronic use"],
+  "who_should_avoid": ["pregnancy or breastfeeding", "active malignancy or cancer history", "uncontrolled diabetes", "cardiac conditions without cardiology clearance"],
+  "interactions_notes": "May interact with medications affecting growth hormone, cortisol, or prolactin. Can cause desensitization with continuous use. Comprehensive endocrine evaluation recommended before use.",
+  "dosing_ranges_literature": "Research protocols have used doses ranging from 100-200 mcg administered 1-2 times daily. Cycling protocols often recommended due to desensitization concerns.",
+  "reconstitution": {
+    "vial_total_mg": 2,
+    "common_diluents_ml": [2, 5],
+    "example_doses_mg": [0.1, 0.2]
+  },
+  "storage_notes": "Store unreconstituted peptide in freezer (-20°C or colder). After reconstitution with bacteriostatic water, store refrigerated and use within 2-3 weeks.",
+  "references": [
+    {
+      "id": "ref1",
+      "title": "Hexarelin: cardiovascular and GH-releasing effects",
+      "source": "PubMed",
+      "year": 2005,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Research on hexarelin's cardioprotective properties."
+    },
+    {
+      "id": "ref2",
+      "title": "Growth hormone secretagogues and receptor desensitization",
+      "source": "Review",
+      "year": 2010,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Overview of GH secretagogue effects and tolerance development."
+    }
+  ],
+  "last_reviewed": "2025-11-03"
+}

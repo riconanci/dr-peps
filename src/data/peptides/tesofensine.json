@@ -1,0 +1,40 @@
+{
+  "slug": "tesofensine",
+  "name": "Tesofensine",
+  "aliases": ["NS-2330"],
+  "category_tags": ["weight", "metabolic", "cognitive"],
+  "typical_route": ["oral"],
+  "overview": "A serotonin-noradrenaline-dopamine reuptake inhibitor initially developed for Alzheimer's and Parkinson's disease. Clinical trials revealed significant weight loss effects, shifting research focus to obesity treatment.",
+  "what_people_seek": ["weight loss support", "appetite suppression", "metabolic enhancement", "energy and focus"],
+  "evidence_level": "Moderate",
+  "risk_level": "High",
+  "side_effects_common": ["dry mouth", "nausea", "diarrhea", "insomnia", "increased heart rate", "elevated blood pressure", "anxiety or mood changes"],
+  "who_should_avoid": ["pregnancy or breastfeeding", "cardiovascular disease or uncontrolled hypertension", "history of eating disorders", "severe anxiety or psychiatric conditions", "concurrent use of MAO inhibitors or other psychiatric medications"],
+  "interactions_notes": "CRITICAL: Significant interaction risk with antidepressants (SSRIs, SNRIs), MAO inhibitors, stimulants, and blood pressure medications. Can cause serotonin syndrome. Comprehensive psychiatric and cardiovascular evaluation mandatory before use.",
+  "dosing_ranges_literature": "Clinical trials for obesity explored doses of 0.25-1 mg per day orally. The 0.5 mg dose showed optimal efficacy-to-safety ratio in phase 2 trials. Not approved for use in most countries.",
+  "reconstitution": {
+    "vial_total_mg": 10,
+    "common_diluents_ml": [10],
+    "example_doses_mg": [0.25, 0.5, 1]
+  },
+  "storage_notes": "Store in cool, dry place away from light. Follow specific product storage instructions as this is typically an oral compound.",
+  "references": [
+    {
+      "id": "ref1",
+      "title": "Tesofensine for obesity treatment",
+      "source": "PubMed",
+      "year": 2010,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Phase 2 clinical trial data on tesofensine for weight loss."
+    },
+    {
+      "id": "ref2",
+      "title": "Triple monoamine reuptake inhibitors in weight management",
+      "source": "Review",
+      "year": 2013,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Overview of tesofensine's mechanism and efficacy in obesity."
+    }
+  ],
+  "last_reviewed": "2025-11-03"
+}

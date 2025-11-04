@@ -1,0 +1,40 @@
+{
+  "slug": "ipamorelin",
+  "name": "Ipamorelin",
+  "aliases": ["NNC 26-0161"],
+  "category_tags": ["growth", "recovery", "metabolic"],
+  "typical_route": ["subQ", "IM"],
+  "overview": "A selective growth hormone secretagogue and ghrelin mimetic that stimulates growth hormone release without significantly affecting cortisol or prolactin levels. It is known for having fewer side effects compared to earlier growth hormone releasing peptides.",
+  "what_people_seek": ["growth hormone optimization", "recovery support", "body composition", "sleep quality"],
+  "evidence_level": "Moderate",
+  "risk_level": "Low",
+  "side_effects_common": ["injection site reactions", "headache", "flushing", "increased hunger (mild)", "water retention (rare)"],
+  "who_should_avoid": ["pregnancy or breastfeeding", "active malignancy or cancer history", "severe illness requiring hospitalization", "pediatric use without endocrine specialist guidance"],
+  "interactions_notes": "May interact with medications affecting growth hormone or glucose metabolism. Generally well-tolerated but discuss all medications with clinician, especially diabetes treatments and thyroid medications.",
+  "dosing_ranges_literature": "Research protocols have used doses ranging from 100-300 mcg administered 1-3 times daily, typically before meals or before bed.",
+  "reconstitution": {
+    "vial_total_mg": 5,
+    "common_diluents_ml": [2, 5],
+    "example_doses_mg": [0.1, 0.2, 0.3]
+  },
+  "storage_notes": "Store unreconstituted peptide in freezer (-20°C or colder). After reconstitution with bacteriostatic water, store refrigerated and use within 2-3 weeks.",
+  "references": [
+    {
+      "id": "ref1",
+      "title": "Ipamorelin: A selective GH secretagogue",
+      "source": "PubMed",
+      "year": 1998,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Initial characterization of ipamorelin's selective effects on GH secretion."
+    },
+    {
+      "id": "ref2",
+      "title": "Growth hormone secretagogues: Clinical applications",
+      "source": "Review",
+      "year": 2011,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Comparative review of GH-releasing peptides including ipamorelin."
+    }
+  ],
+  "last_reviewed": "2025-11-03"
+}

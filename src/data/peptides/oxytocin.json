@@ -1,0 +1,40 @@
+{
+  "slug": "oxytocin",
+  "name": "Oxytocin",
+  "aliases": ["Pitocin", "OT"],
+  "category_tags": ["recovery", "cognitive"],
+  "typical_route": ["nasal", "subQ"],
+  "overview": "A naturally occurring neuropeptide and hormone produced in the hypothalamus. It is FDA-approved for medical use in childbirth and has been researched for various psychological and social applications.",
+  "what_people_seek": ["social bonding", "stress reduction", "mood support", "relationship enhancement"],
+  "evidence_level": "Moderate",
+  "risk_level": "Moderate",
+  "side_effects_common": ["nasal irritation (nasal form)", "headache", "nausea", "uterine contractions (particularly in pregnancy)", "water retention"],
+  "who_should_avoid": ["pregnancy without obstetric supervision (can induce labor)", "breastfeeding without medical guidance", "cardiovascular disease", "significant hyponatremia risk"],
+  "interactions_notes": "Can interact with medications affecting blood pressure and water balance. May potentiate vasopressin effects. Contraindicated during pregnancy except under medical supervision for labor induction.",
+  "dosing_ranges_literature": "Research protocols for psychological applications have used intranasal doses of 24-40 IU. Medical obstetric use follows different protocols. Proper medical supervision essential.",
+  "reconstitution": {
+    "vial_total_mg": 2,
+    "common_diluents_ml": [5],
+    "example_doses_mg": [0.1, 0.2]
+  },
+  "storage_notes": "Store unreconstituted peptide refrigerated at 2-8°C. After reconstitution, use immediately or store refrigerated for up to 24 hours. Nasal sprays have specific storage requirements.",
+  "references": [
+    {
+      "id": "ref1",
+      "title": "Oxytocin: social behavior and therapeutic potential",
+      "source": "PubMed",
+      "year": 2013,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Review of oxytocin's role in social cognition and bonding."
+    },
+    {
+      "id": "ref2",
+      "title": "Intranasal oxytocin in psychiatric research",
+      "source": "Review",
+      "year": 2017,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Overview of oxytocin research in autism, anxiety, and social disorders."
+    }
+  ],
+  "last_reviewed": "2025-11-03"
+}

@@ -1,0 +1,40 @@
+{
+  "slug": "kisspeptin-10",
+  "name": "Kisspeptin-10",
+  "aliases": ["KP-10", "Metastin", "Kiss1"],
+  "category_tags": ["libido", "metabolic"],
+  "typical_route": ["subQ", "IM"],
+  "overview": "A peptide hormone that plays a critical role in regulating reproductive hormone secretion, particularly in triggering GnRH (gonadotropin-releasing hormone) release. Research has explored its role in fertility and sexual function.",
+  "what_people_seek": ["reproductive hormone support", "libido enhancement", "fertility support", "hypothalamic-pituitary axis optimization"],
+  "evidence_level": "Preliminary",
+  "risk_level": "Unknown",
+  "side_effects_common": ["injection site reactions", "hot flashes", "headache", "nausea", "changes in mood"],
+  "who_should_avoid": ["pregnancy or breastfeeding", "hormone-sensitive cancers", "individuals with reproductive disorders without endocrine specialist guidance", "adolescents without medical supervision"],
+  "interactions_notes": "Very limited interaction data. May affect reproductive hormones including LH, FSH, and sex hormones. Comprehensive endocrine evaluation essential before use. May interact with hormonal therapies.",
+  "dosing_ranges_literature": "Clinical research has explored intravenous doses in the microgram range for studying reproductive function. Subcutaneous protocols are less established. Human data is limited.",
+  "reconstitution": {
+    "vial_total_mg": 1,
+    "common_diluents_ml": [1, 2],
+    "example_doses_mg": [0.1, 0.2]
+  },
+  "storage_notes": "Store unreconstituted peptide in freezer (-20°C or colder). After reconstitution with bacteriostatic water, store refrigerated and use within 1-2 weeks.",
+  "references": [
+    {
+      "id": "ref1",
+      "title": "Kisspeptin and reproductive axis regulation",
+      "source": "PubMed",
+      "year": 2010,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Research on kisspeptin's role in GnRH secretion and puberty."
+    },
+    {
+      "id": "ref2",
+      "title": "Kisspeptin in fertility and reproduction",
+      "source": "Review",
+      "year": 2016,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Overview of kisspeptin research in reproductive medicine."
+    }
+  ],
+  "last_reviewed": "2025-11-03"
+}
