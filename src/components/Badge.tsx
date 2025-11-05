@@ -31,9 +31,10 @@ export function Badge({ children, variant = 'default', size = 'md' }: BadgeProps
 
 interface EvidenceBadgeProps {
   level: EvidenceLevel;
+  size?: 'sm' | 'md';
 }
 
-export function EvidenceBadge({ level }: EvidenceBadgeProps) {
+export function EvidenceBadge({ level, size = 'md' }: EvidenceBadgeProps) {
   const variantMap: Record<EvidenceLevel, 'success' | 'primary' | 'warning' | 'default'> = {
     Strong: 'success',
     Moderate: 'primary',
@@ -42,7 +43,7 @@ export function EvidenceBadge({ level }: EvidenceBadgeProps) {
   };
 
   return (
-    <Badge variant={variantMap[level]}>
+    <Badge variant={variantMap[level]} size={size}>
       <svg className="mr-1 h-3 w-3" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
         <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
         <path
@@ -58,9 +59,10 @@ export function EvidenceBadge({ level }: EvidenceBadgeProps) {
 
 interface RiskBadgeProps {
   level: RiskLevel;
+  size?: 'sm' | 'md';
 }
 
-export function RiskBadge({ level }: RiskBadgeProps) {
+export function RiskBadge({ level, size = 'md' }: RiskBadgeProps) {
   const variantMap: Record<RiskLevel, 'success' | 'warning' | 'danger' | 'default'> = {
     Low: 'success',
     Moderate: 'warning',
@@ -69,7 +71,7 @@ export function RiskBadge({ level }: RiskBadgeProps) {
   };
 
   return (
-    <Badge variant={variantMap[level]}>
+    <Badge variant={variantMap[level]} size={size}>
       <svg className="mr-1 h-3 w-3" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
         <path
           fillRule="evenodd"

@@ -11,6 +11,11 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Dr Peps - Educational Peptide Information',
   description: 'Evidence-based peptide education resource. Not medical advice. Always consult a licensed healthcare provider.',
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
+  },
   metadataBase: new URL('https://drpeps.com'),
   keywords: ['peptides', 'education', 'BPC-157', 'TB-500', 'semaglutide', 'tirzepatide'],
   openGraph: {

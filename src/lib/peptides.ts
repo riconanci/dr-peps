@@ -1,4 +1,5 @@
 import { Peptide } from '@/types/peptides';
+import { normalizeSearchString } from './normalize-search';
 
 // Original 6 peptides
 import bpc157Data from '@/data/peptides/bpc-157.json';
@@ -90,16 +91,25 @@ export function getPeptideBySlug(slug: string): Peptide | undefined {
   return allPeptidesData.find((p) => p.slug === slug);
 }
 
+/**
+ * Search peptides with normalized matching.
+ * Handles spaces/hyphens and 1/i/I/l/L variations.
+ */
 export function searchPeptides(query: string): Peptide[] {
   if (!query.trim()) return allPeptidesData;
   
-  const lowerQuery = query.toLowerCase();
+  const normalizedQuery = normalizeSearchString(query);
+  
   return allPeptidesData.filter((peptide) => {
-    return (
-      peptide.name.toLowerCase().includes(lowerQuery) ||
-      peptide.aliases.some((alias) => alias.toLowerCase().includes(lowerQuery)) ||
-      peptide.category_tags.some((tag) => tag.toLowerCase().includes(lowerQuery))
+    const matchesName = normalizeSearchString(peptide.name).includes(normalizedQuery);
+    const matchesAlias = peptide.aliases.some((alias) =>
+      normalizeSearchString(alias).includes(normalizedQuery)
     );
+    const matchesTag = peptide.category_tags.some((tag) =>
+      normalizeSearchString(tag).includes(normalizedQuery)
+    );
+    
+    return matchesName || matchesAlias || matchesTag;
   });
 }
 

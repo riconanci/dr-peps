@@ -4,9 +4,10 @@ import { useState, useMemo, useEffect } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { getAllPeptides } from '@/lib/peptides';
-import SearchInput from '@/components/SearchInput';
+import SearchInput, { SearchSuggestion } from '@/components/SearchInput';
 import { EvidenceBadge, RiskBadge } from '@/components/Badge';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/Card';
+import { normalizeSearchString } from '@/lib/normalize-search';
 
 // Icon mapping for benefits
 const benefitIcons: Record<string, { icon: string; label: string }> = {
@@ -66,18 +67,46 @@ export default function LibraryPage() {
     new Set(allPeptides.flatMap((p) => p.typical_route))
   ).sort();
 
+  // Generate search suggestions using normalized matching
+  const searchSuggestions = useMemo((): SearchSuggestion[] => {
+    if (!searchQuery.trim()) return [];
+
+    const normalizedQuery = normalizeSearchString(searchQuery);
+    
+    return allPeptides
+      .filter((peptide) => {
+        const matchesName = normalizeSearchString(peptide.name).includes(normalizedQuery);
+        const matchesAlias = peptide.aliases.some((alias) =>
+          normalizeSearchString(alias).includes(normalizedQuery)
+        );
+        const matchesTag = peptide.category_tags.some((tag) =>
+          normalizeSearchString(tag).includes(normalizedQuery)
+        );
+        return matchesName || matchesAlias || matchesTag;
+      })
+      .map((peptide) => ({
+        name: peptide.name,
+        slug: peptide.slug,
+        aliases: peptide.aliases,
+      }));
+  }, [allPeptides, searchQuery]);
+
   const filteredPeptides = useMemo(() => {
     return allPeptides.filter((peptide) => {
-      // Search filter
+      // Search filter with normalized matching
       if (searchQuery) {
-        const query = searchQuery.toLowerCase();
-        const matchesName = peptide.name.toLowerCase().includes(query);
-        const matchesAlias = peptide.aliases.some((alias) => alias.toLowerCase().includes(query));
-        const matchesTag = peptide.category_tags.some((tag) => tag.toLowerCase().includes(query));
+        const normalizedQuery = normalizeSearchString(searchQuery);
+        const matchesName = normalizeSearchString(peptide.name).includes(normalizedQuery);
+        const matchesAlias = peptide.aliases.some((alias) =>
+          normalizeSearchString(alias).includes(normalizedQuery)
+        );
+        const matchesTag = peptide.category_tags.some((tag) =>
+          normalizeSearchString(tag).includes(normalizedQuery)
+        );
         if (!matchesName && !matchesAlias && !matchesTag) return false;
       }
 
-      // Benefits filter - CHANGED TO AND LOGIC
+      // Benefits filter - AND LOGIC
       // Now requires ALL selected benefits to be present
       if (selectedBenefits.length > 0) {
         const normalizedTags = peptide.category_tags.map((tag) =>
@@ -130,11 +159,15 @@ export default function LibraryPage() {
         </p>
       </div>
 
-      {/* Search */}
+      {/* Search with Autocomplete */}
       <SearchInput
         value={searchQuery}
         onChange={setSearchQuery}
         placeholder="Search peptides by name or tag..."
+        suggestions={searchSuggestions}
+        onSelectSuggestion={(suggestion) => {
+          setSearchQuery(suggestion.name);
+        }}
       />
 
       {/* Filters Container */}
@@ -254,49 +287,41 @@ export default function LibraryPage() {
               <Link 
                 key={peptide.slug} 
                 href={`/p/${peptide.slug}${returnUrl ? `?return=${encodeURIComponent(returnUrl)}` : ''}`}
+                className="block h-full"
               >
-                <Card hover className="h-full">
+                <Card className="h-full card-hover">
                   <CardHeader>
                     <CardTitle>{peptide.name}</CardTitle>
-                    
-                    {/* Administration Routes - Right after name */}
-                    <div className="flex flex-wrap gap-2 mt-2">
-                      {peptide.typical_route.map((route) => (
-                        <span
-                          key={route}
-                          className="px-2 py-1 bg-blue-600/20 border border-blue-500/30 text-blue-300 rounded text-xs font-medium"
-                          title={`Administration: ${route}`}
-                        >
-                          {route === 'subQ' && '💉 SubQ'}
-                          {route === 'oral' && '💊 Oral'}
-                          {route === 'nasal' && '👃 Nasal'}
-                          {route === 'topical' && '🧴 Topical'}
-                          {route === 'IM' && '💉 IM'}
-                          {!['subQ', 'oral', 'nasal', 'topical', 'IM'].includes(route) && route}
-                        </span>
-                      ))}
-                    </div>
-                    
-                    {/* Evidence and Risk badges */}
-                    <div className="flex flex-wrap gap-2 mt-2">
-                      <EvidenceBadge level={peptide.evidence_level} />
-                      <RiskBadge level={peptide.risk_level} />
-                    </div>
+                    {peptide.aliases.length > 0 && (
+                      <p className="text-sm text-slate-400 mt-1">
+                        {peptide.aliases[0]}
+                      </p>
+                    )}
                   </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-slate-300 mb-3 line-clamp-2">{peptide.overview}</p>
+                  <CardContent className="space-y-4">
+                    <p className="text-slate-300 text-sm leading-relaxed line-clamp-3">
+                      {peptide.overview}
+                    </p>
                     
-                    {/* Benefit Icons */}
                     <div className="flex flex-wrap gap-2">
-                      {normalizedTags.map((tag) => (
+                      {normalizedTags.slice(0, 3).map((tag) => (
                         <span
                           key={tag}
-                          className="text-2xl"
-                          title={benefitIcons[tag]?.label || tag}
+                          className="px-2 py-1 bg-slate-700/50 text-slate-300 rounded text-xs"
                         >
-                          {benefitIcons[tag]?.icon || '📌'}
+                          {benefitIcons[tag]?.icon || '📌'} {tag}
                         </span>
                       ))}
+                      {normalizedTags.length > 3 && (
+                        <span className="px-2 py-1 bg-slate-700/50 text-slate-400 rounded text-xs">
+                          +{normalizedTags.length - 3} more
+                        </span>
+                      )}
+                    </div>
+                    
+                    <div className="flex gap-2">
+                      <EvidenceBadge level={peptide.evidence_level} size="sm" />
+                      <RiskBadge level={peptide.risk_level} size="sm" />
                     </div>
                   </CardContent>
                 </Card>
@@ -307,12 +332,12 @@ export default function LibraryPage() {
 
         {filteredPeptides.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-slate-400">No peptides found matching your criteria.</p>
+            <p className="text-slate-400 text-lg">No peptides match your filters.</p>
             <button
               onClick={clearFilters}
-              className="mt-4 text-primary-400 hover:text-primary-300 font-medium transition-colors"
+              className="mt-4 text-primary-400 hover:text-primary-300 font-medium"
             >
-              Clear filters
+              Clear all filters
             </button>
           </div>
         )}
