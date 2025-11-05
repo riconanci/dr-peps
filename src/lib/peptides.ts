@@ -36,8 +36,9 @@ import oxytocinData from '@/data/peptides/oxytocin.json';
 import kisspeptin10Data from '@/data/peptides/kisspeptin-10.json';
 import tesofensineData from '@/data/peptides/tesofensine.json';
 
-// Combo peptide
+// Combo peptide + NAD+
 import bpcTbComboData from '@/data/peptides/bpc-157-tb-500-combo.json';
+import nadPlusData from '@/data/peptides/nad-plus.json';
 
 const allPeptidesData = [
   // Original 6 peptides
@@ -76,8 +77,9 @@ const allPeptidesData = [
   kisspeptin10Data,
   tesofensineData,
   
-  // Combo (1)
+  // Combo + NAD+ (2)
   bpcTbComboData,
+  nadPlusData,
 ] as Peptide[];
 
 export function getAllPeptides(): Peptide[] {

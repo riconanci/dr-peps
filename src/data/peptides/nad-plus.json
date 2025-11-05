@@ -1,0 +1,48 @@
+{
+  "slug": "nad-plus",
+  "name": "NAD+",
+  "aliases": ["Nicotinamide Adenine Dinucleotide", "NAD+ IV", "NAD Plus"],
+  "category_tags": ["metabolic", "recovery", "cognitive"],
+  "typical_route": ["subQ", "IM", "oral"],
+  "overview": "NAD+ (Nicotinamide Adenine Dinucleotide) is a coenzyme found in all living cells, not technically a peptide. It plays a crucial role in cellular energy production, DNA repair, and numerous metabolic processes. NAD+ levels naturally decline with age.",
+  "what_people_seek": ["cellular energy optimization", "anti-aging support", "metabolic health", "cognitive function", "DNA repair support", "mitochondrial function"],
+  "evidence_level": "Moderate",
+  "risk_level": "Low",
+  "side_effects_common": ["flushing or warmth", "nausea (especially IV/IM)", "cramping or discomfort during IV infusion", "headache", "fatigue (transient)", "injection site reactions"],
+  "who_should_avoid": ["pregnancy or breastfeeding", "active malignancy without oncology clearance", "severe kidney or liver disease", "known hypersensitivity to niacin or NAD+ compounds"],
+  "interactions_notes": "May interact with medications affecting liver metabolism. Can interact with blood pressure medications. May affect glucose metabolism - caution with diabetes medications. Discuss all supplements and medications with clinician.",
+  "dosing_ranges_literature": "Oral NAD+ precursors (NMN, NR) typically use 250-1000 mg daily. Injectable NAD+ protocols vary widely from 25-100 mg subcutaneous to 250-1000 mg IV infusions. IV infusions are typically administered slowly over 2-4 hours to minimize side effects.",
+  "reconstitution": {
+    "vial_total_mg": 100,
+    "common_diluents_ml": [10, 20],
+    "example_doses_mg": [25, 50, 100]
+  },
+  "storage_notes": "Store unreconstituted NAD+ powder refrigerated at 2-8°C, protected from light. After reconstitution with sterile saline or sterile water, use immediately or store refrigerated for up to 24 hours. IV formulations may have different requirements.",
+  "references": [
+    {
+      "id": "ref1",
+      "title": "NAD+ metabolism and aging",
+      "source": "PubMed",
+      "year": 2018,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Review of NAD+ decline with age and cellular function."
+    },
+    {
+      "id": "ref2",
+      "title": "NAD+ precursors: NMN and NR",
+      "source": "PubMed",
+      "year": 2020,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Clinical studies on NAD+ precursor supplementation."
+    },
+    {
+      "id": "ref3",
+      "title": "NAD+ in cellular energy and DNA repair",
+      "source": "Review",
+      "year": 2019,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Overview of NAD+'s role in cellular metabolism and longevity."
+    }
+  ],
+  "last_reviewed": "2025-11-03"
+}
