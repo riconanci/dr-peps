@@ -11,8 +11,8 @@ export default function SubQOverviewPage() {
         >
           ← Back to Learn
         </Link>
-        <h1 className="text-3xl font-bold text-gray-900">Subcutaneous Administration Overview</h1>
-        <p className="text-gray-600 leading-relaxed">
+        <h1 className="text-3xl font-bold text-slate-100">Subcutaneous Administration Overview</h1>
+        <p className="text-slate-300 leading-relaxed">
           Understanding what subcutaneous means and why professional training is essential.
         </p>
       </div>
@@ -48,10 +48,10 @@ export default function SubQOverviewPage() {
           <CardTitle>What is Subcutaneous Administration?</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-          <p className="text-gray-700 leading-relaxed">
+          <p className="text-slate-300 leading-relaxed">
             Subcutaneous (abbreviated "subQ" or "SC") means "under the skin." A subcutaneous injection delivers medication into the fatty tissue layer between the skin and muscle. This route is commonly used for many types of medications, including peptides, insulin, and certain vaccines.
           </p>
-          <p className="text-gray-700 leading-relaxed">
+          <p className="text-slate-300 leading-relaxed">
             The subcutaneous layer has a good blood supply, which allows for steady, gradual absorption of medications into the bloodstream. This makes it ideal for peptides and other compounds that benefit from sustained release.
           </p>
         </CardContent>
@@ -63,24 +63,24 @@ export default function SubQOverviewPage() {
           <CardTitle>Common Injection Sites</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-          <p className="text-gray-700 leading-relaxed">
+          <p className="text-slate-300 leading-relaxed">
             Healthcare providers typically recommend these areas for subcutaneous injections:
           </p>
-          <ul className="space-y-2 text-gray-700">
+          <ul className="space-y-2 text-slate-300">
             <li className="flex items-start">
               <span className="text-primary-600 mr-2">•</span>
-              <span><strong>Abdomen:</strong> At least 2 inches away from the belly button</span>
+              <span><strong className="text-slate-100">Abdomen:</strong> At least 2 inches away from the belly button</span>
             </li>
             <li className="flex items-start">
               <span className="text-primary-600 mr-2">•</span>
-              <span><strong>Thighs:</strong> Front and outer portions of the upper leg</span>
+              <span><strong className="text-slate-100">Thighs:</strong> Front and outer portions of the upper leg</span>
             </li>
             <li className="flex items-start">
               <span className="text-primary-600 mr-2">•</span>
-              <span><strong>Upper arms:</strong> Back of the upper arm (often requires assistance)</span>
+              <span><strong className="text-slate-100">Upper arms:</strong> Back of the upper arm (often requires assistance)</span>
             </li>
           </ul>
-          <p className="text-gray-700 leading-relaxed">
+          <p className="text-slate-300 leading-relaxed">
             Your healthcare provider will show you which sites are best for your situation and teach you how to rotate injection sites to prevent tissue irritation.
           </p>
         </CardContent>
@@ -92,61 +92,63 @@ export default function SubQOverviewPage() {
           <CardTitle>Sterile Technique Principles</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-          <p className="text-gray-700 leading-relaxed">
-            Proper sterile technique is critical to prevent infections. Your clinician will train you on:
+          <p className="text-slate-300 leading-relaxed">
+            Proper sterile technique is critical to prevent infections. Key concepts include:
           </p>
-          <ul className="space-y-2 text-gray-700">
+          <ul className="space-y-2 text-slate-300">
             <li className="flex items-start">
               <span className="text-primary-600 mr-2">•</span>
-              <span>Thorough handwashing before handling any supplies</span>
+              <span><strong className="text-slate-100">Hand hygiene:</strong> Thorough hand washing before handling supplies</span>
             </li>
             <li className="flex items-start">
               <span className="text-primary-600 mr-2">•</span>
-              <span>Proper cleaning of injection sites with alcohol swabs</span>
+              <span><strong className="text-slate-100">Alcohol swabs:</strong> Cleaning the injection site and vial tops</span>
             </li>
             <li className="flex items-start">
               <span className="text-primary-600 mr-2">•</span>
-              <span>Keeping vial tops and needles sterile</span>
+              <span><strong className="text-slate-100">Single-use needles:</strong> Never reusing needles or syringes</span>
             </li>
             <li className="flex items-start">
               <span className="text-primary-600 mr-2">•</span>
-              <span>Using single-use needles and syringes only</span>
-            </li>
-            <li className="flex items-start">
-              <span className="text-primary-600 mr-2">•</span>
-              <span>Avoiding touching the needle tip to any non-sterile surface</span>
+              <span><strong className="text-slate-100">Clean workspace:</strong> Using a clean, dry surface for preparation</span>
             </li>
           </ul>
+          <p className="text-slate-300 leading-relaxed">
+            Your healthcare provider will demonstrate the full sterile technique process during training.
+          </p>
         </CardContent>
       </Card>
 
-      {/* Storage Basics */}
+      {/* Storage */}
       <Card>
         <CardHeader>
           <CardTitle>Storage Basics</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-          <p className="text-gray-700 leading-relaxed">
-            Proper storage preserves medication quality and safety:
+          <p className="text-slate-300 leading-relaxed">
+            Proper storage is essential for peptide effectiveness and safety:
           </p>
-          <ul className="space-y-2 text-gray-700">
+          <ul className="space-y-2 text-slate-300">
             <li className="flex items-start">
               <span className="text-primary-600 mr-2">•</span>
-              <span><strong>Lyophilized (powder) peptides:</strong> Typically stable at room temperature for short periods, or refrigerated for longer storage. Check supplier guidance.</span>
+              <span><strong className="text-slate-100">Lyophilized (powder):</strong> Often stored at room temperature or refrigerated</span>
             </li>
             <li className="flex items-start">
               <span className="text-primary-600 mr-2">•</span>
-              <span><strong>Reconstituted peptides:</strong> Usually require refrigeration (2-8°C) and have limited shelf life after mixing. Follow manufacturer instructions.</span>
+              <span><strong className="text-slate-100">Reconstituted (mixed):</strong> Typically requires refrigeration</span>
             </li>
             <li className="flex items-start">
               <span className="text-primary-600 mr-2">•</span>
-              <span><strong>Protect from light:</strong> Many peptides are sensitive to light and should be stored in amber vials or wrapped containers.</span>
+              <span><strong className="text-slate-100">Light sensitivity:</strong> Some peptides should be protected from direct light</span>
             </li>
             <li className="flex items-start">
               <span className="text-primary-600 mr-2">•</span>
-              <span><strong>Avoid contamination:</strong> Always use a new, sterile needle when drawing from a vial.</span>
+              <span><strong className="text-slate-100">Expiration dates:</strong> Always follow manufacturer guidance</span>
             </li>
           </ul>
+          <p className="text-slate-300 leading-relaxed">
+            Storage requirements vary by peptide. Always follow supplier instructions and consult your healthcare provider.
+          </p>
         </CardContent>
       </Card>
 
@@ -156,56 +158,74 @@ export default function SubQOverviewPage() {
           <CardTitle>Sharps Disposal</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="bg-warning-50 border border-warning-300 rounded-lg p-4">
-            <p className="text-sm text-warning-900 font-medium">
-              ⚠️ Never throw needles or syringes in household trash
-            </p>
-          </div>
-          <p className="text-gray-700 leading-relaxed">
-            Used needles and syringes must be disposed of in an FDA-approved sharps container. These containers are designed to prevent needle-stick injuries and are available at pharmacies, medical supply stores, or through mail-order programs.
+          <p className="text-slate-300 leading-relaxed">
+            Safe disposal of needles and syringes is critical for public health and safety:
           </p>
-          <p className="text-gray-700 leading-relaxed">
-            When your sharps container is about three-quarters full, follow local regulations for disposal. Many communities offer sharps disposal drop-off sites or mail-back programs.
+          <ul className="space-y-2 text-slate-300">
+            <li className="flex items-start">
+              <span className="text-primary-600 mr-2">•</span>
+              <span><strong className="text-slate-100">Sharps container:</strong> Use an FDA-approved container (available at pharmacies)</span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-primary-600 mr-2">•</span>
+              <span><strong className="text-slate-100">Never recap:</strong> Don't recap needles after use</span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-primary-600 mr-2">•</span>
+              <span><strong className="text-slate-100">Never trash:</strong> Don't throw needles in regular garbage</span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-primary-600 mr-2">•</span>
+              <span><strong className="text-slate-100">Disposal programs:</strong> Many pharmacies and communities offer sharps disposal services</span>
+            </li>
+          </ul>
+          <p className="text-slate-300 leading-relaxed">
+            Check with your local pharmacy or health department for sharps disposal options in your area.
           </p>
         </CardContent>
       </Card>
 
-      {/* Get Training */}
-      <Card className="bg-primary-50 border-2 border-primary-300">
+      {/* Next Steps */}
+      <Card>
         <CardHeader>
-          <CardTitle>Next Steps: Get Hands-On Training</CardTitle>
+          <CardTitle>Next Steps</CardTitle>
         </CardHeader>
-        <CardContent className="space-y-4">
-          <p className="text-gray-900 leading-relaxed font-medium">
-            Reading about injection technique is not sufficient. You must receive hands-on training from a qualified healthcare provider who can:
+        <CardContent className="space-y-3">
+          <p className="text-slate-300 leading-relaxed">
+            This overview provides conceptual knowledge only. Before beginning any subcutaneous administration:
           </p>
-          <ul className="space-y-2 text-gray-900">
+          <ul className="space-y-2 text-slate-300">
             <li className="flex items-start">
-              <span className="text-primary-600 mr-2">•</span>
-              <span>Demonstrate proper technique in person</span>
+              <span className="text-primary-400 mr-2">1.</span>
+              <span>Consult with a licensed healthcare provider</span>
             </li>
             <li className="flex items-start">
-              <span className="text-primary-600 mr-2">•</span>
-              <span>Watch you perform your first injections under supervision</span>
+              <span className="text-primary-400 mr-2">2.</span>
+              <span>Receive hands-on training in person</span>
             </li>
             <li className="flex items-start">
-              <span className="text-primary-600 mr-2">•</span>
-              <span>Answer questions specific to your situation</span>
+              <span className="text-primary-400 mr-2">3.</span>
+              <span>Discuss your specific medication, dosing, and schedule</span>
             </li>
             <li className="flex items-start">
-              <span className="text-primary-600 mr-2">•</span>
-              <span>Provide supplies and written instructions</span>
+              <span className="text-primary-400 mr-2">4.</span>
+              <span>Obtain proper supplies and storage equipment</span>
             </li>
             <li className="flex items-start">
-              <span className="text-primary-600 mr-2">•</span>
-              <span>Be available for follow-up questions or concerns</span>
+              <span className="text-primary-400 mr-2">5.</span>
+              <span>Know who to contact for questions or concerns</span>
             </li>
           </ul>
-          <p className="text-gray-900 leading-relaxed">
-            Ask your prescribing clinician about scheduling an injection training session before you begin any peptide therapy.
-          </p>
         </CardContent>
       </Card>
+
+      {/* Final Warning */}
+      <div className="card p-6 text-center border-2 border-yellow-600/50 bg-yellow-600/10">
+        <div className="text-4xl mb-4">⚠️</div>
+        <p className="text-slate-100 font-medium text-lg">
+          Remember: This information is educational only. Professional training is required before self-administering any injectable medication.
+        </p>
+      </div>
     </div>
   );
 }

@@ -5,8 +5,8 @@ export default function LearnPage() {
   return (
     <div className="container mx-auto px-4 py-8 space-y-8">
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold text-gray-900">Learn the Basics</h1>
-        <p className="text-gray-600 leading-relaxed">
+        <h1 className="text-3xl font-bold text-slate-100">Learn the Basics</h1>
+        <p className="text-slate-300 leading-relaxed">
           Educational resources to help you understand peptide administration, storage, and safety fundamentals.
         </p>
       </div>
@@ -19,7 +19,7 @@ export default function LearnPage() {
               <CardTitle>Subcutaneous Overview</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-slate-300 leading-relaxed">
                 Learn about subcutaneous administration: what it means, where it&apos;s done, and why proper training from a clinician is essential.
               </p>
             </CardContent>
@@ -33,7 +33,7 @@ export default function LearnPage() {
               <CardTitle>Storage Best Practices</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-slate-300 leading-relaxed">
                 Coming soon: Guidelines for properly storing lyophilized and reconstituted peptides.
               </p>
             </CardContent>
@@ -46,29 +46,25 @@ export default function LearnPage() {
           <CardTitle>Important Safety Reminders</CardTitle>
         </CardHeader>
         <CardContent className="space-y-3">
-          <p className="text-gray-700 leading-relaxed">
-            These educational resources are designed to supplement, not replace, guidance from your healthcare provider. Always:
+          <p className="text-slate-300 leading-relaxed">
+            These educational resources are designed to supplement, not replace, guidance from your healthcare provider. Always consult a licensed clinician for:
           </p>
-          <ul className="space-y-2 text-gray-700">
+          <ul className="space-y-2 text-slate-300">
             <li className="flex items-start">
-              <span className="text-primary-600 mr-2">•</span>
-              <span>Receive proper training from a licensed clinician before administering any injection</span>
+              <span className="text-primary-400 mr-2">•</span>
+              <span>Determining if peptides are appropriate for your situation</span>
             </li>
             <li className="flex items-start">
-              <span className="text-primary-600 mr-2">•</span>
-              <span>Follow sterile technique as instructed by your healthcare team</span>
+              <span className="text-primary-400 mr-2">•</span>
+              <span>Proper administration technique and hands-on training</span>
             </li>
             <li className="flex items-start">
-              <span className="text-primary-600 mr-2">•</span>
-              <span>Dispose of sharps in an approved container</span>
+              <span className="text-primary-400 mr-2">•</span>
+              <span>Dosing guidance tailored to your needs</span>
             </li>
             <li className="flex items-start">
-              <span className="text-primary-600 mr-2">•</span>
-              <span>Report any adverse reactions to your healthcare provider immediately</span>
-            </li>
-            <li className="flex items-start">
-              <span className="text-primary-600 mr-2">•</span>
-              <span>Store medications according to manufacturer and prescriber instructions</span>
+              <span className="text-primary-400 mr-2">•</span>
+              <span>Monitoring for side effects or interactions</span>
             </li>
           </ul>
         </CardContent>
