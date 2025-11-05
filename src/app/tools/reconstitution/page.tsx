@@ -10,8 +10,9 @@ import {
   formatNumber,
 } from '@/lib/calc';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/Card';
+import { Suspense } from 'react';
 
-export default function ReconstitutionCalculatorPage() {
+function ReconstitutionCalculatorContent() {
   const searchParams = useSearchParams();
   
   const [vialTotalMg, setVialTotalMg] = useState('5');
@@ -76,6 +77,7 @@ export default function ReconstitutionCalculatorPage() {
 
   return (
     <div className="container mx-auto px-4 py-8 space-y-8">
+      {/* All your existing JSX stays exactly the same */}
       <div className="space-y-4">
         <Link
           href="/tools"
@@ -246,5 +248,13 @@ export default function ReconstitutionCalculatorPage() {
         </Card>
       )}
     </div>
+  );
+}
+
+export default function ReconstitutionCalculatorPage() {
+  return (
+    <Suspense fallback={<div className="container mx-auto px-4 py-8 text-center">Loading calculator...</div>}>
+      <ReconstitutionCalculatorContent />
+    </Suspense>
   );
 }

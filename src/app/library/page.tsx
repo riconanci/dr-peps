@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo, useEffect, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { getAllPeptides } from '@/lib/peptides';
@@ -25,7 +25,8 @@ const benefitIcons: Record<string, { icon: string; label: string }> = {
   growth: { icon: '📈', label: 'Growth' },
 };
 
-export default function LibraryPage() {
+// This is the component that uses useSearchParams - it MUST be wrapped in Suspense
+function LibraryContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const allPeptides = getAllPeptides();
@@ -343,5 +344,14 @@ export default function LibraryPage() {
         )}
       </div>
     </div>
+  );
+}
+
+// This is the actual page export - it just wraps LibraryContent in Suspense
+export default function LibraryPage() {
+  return (
+    <Suspense fallback={<div className="container mx-auto px-4 py-8 text-center text-slate-400">Loading library...</div>}>
+      <LibraryContent />
+    </Suspense>
   );
 }
