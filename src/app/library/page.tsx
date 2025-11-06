@@ -11,7 +11,7 @@ import { normalizeSearchString } from '@/lib/normalize-search';
 
 // Icon mapping for benefits
 const benefitIcons: Record<string, { icon: string; label: string }> = {
-  recovery: { icon: '🏃', label: 'Recovery' },
+  recovery: { icon: '🏃🏼', label: 'Recovery' },
   gut: { icon: '🦠', label: 'Gut Health' },
   'joints & tendons': { icon: '🦴', label: 'Joints & Tendons' },
   joints: { icon: '🦴', label: 'Joints' },
@@ -30,7 +30,7 @@ const benefitIcons: Record<string, { icon: string; label: string }> = {
 const routeIcons: Record<string, string> = {
   subQ: '💉',
   oral: '💊',
-  nasal: '👃',
+  nasal: '👃🏼',
   topical: '🧴',
   IM: '💉',
 };
@@ -122,41 +122,35 @@ export default function LibraryPage() {
 
     const normalizedQuery = normalizeSearchString(searchQuery);
     const suggestions: SearchSuggestion[] = [];
+    const seen = new Set<string>();
 
     allPeptides.forEach((peptide) => {
       // Name matches
       if (normalizeSearchString(peptide.name).includes(normalizedQuery)) {
-        suggestions.push({
-          text: peptide.name,
-          type: 'name',
-          href: `/p/${peptide.slug}`,
+        if (!seen.has(peptide.slug)) {
+          suggestions.push({
+            name: peptide.name,
+            slug: peptide.slug,
+            aliases: peptide.aliases,
+          });
+          seen.add(peptide.slug);
+        }
+      }
+      // Alias matches
+      else {
+        peptide.aliases.forEach((alias) => {
+          if (normalizeSearchString(alias).includes(normalizedQuery)) {
+            if (!seen.has(peptide.slug)) {
+              suggestions.push({
+                name: peptide.name,
+                slug: peptide.slug,
+                aliases: peptide.aliases,
+              });
+              seen.add(peptide.slug);
+            }
+          }
         });
       }
-
-      // Alias matches
-      peptide.aliases.forEach((alias) => {
-        if (normalizeSearchString(alias).includes(normalizedQuery)) {
-          suggestions.push({
-            text: `${alias} (${peptide.name})`,
-            type: 'alias',
-            href: `/p/${peptide.slug}`,
-          });
-        }
-      });
-
-      // Category matches
-      peptide.category_tags.forEach((tag) => {
-        if (normalizeSearchString(tag).includes(normalizedQuery)) {
-          const displayTag = tag === 'skin' ? 'skin & hair' : tag;
-          if (!suggestions.some((s) => s.text === displayTag && s.type === 'category')) {
-            suggestions.push({
-              text: displayTag,
-              type: 'category',
-              href: `/library?benefits=${encodeURIComponent(displayTag)}`,
-            });
-          }
-        }
-      });
     });
 
     return suggestions.slice(0, 8);
@@ -197,6 +191,9 @@ export default function LibraryPage() {
           value={searchQuery}
           onChange={setSearchQuery}
           suggestions={searchSuggestions}
+          onSelectSuggestion={(suggestion) => {
+            router.push(`/p/${suggestion.slug}`);
+          }}
           placeholder="Search peptides by name, alias, or benefit..."
         />
       </div>
@@ -258,7 +255,7 @@ export default function LibraryPage() {
                   >
                     {route === 'subQ' && '💉 SubQ'}
                     {route === 'oral' && '💊 Oral'}
-                    {route === 'nasal' && '👃 Nasal'}
+                    {route === 'nasal' && '👃🏼 Nasal'}
                     {route === 'topical' && '🧴 Topical'}
                     {route === 'IM' && '💉 IM'}
                     {!['subQ', 'oral', 'nasal', 'topical', 'IM'].includes(route) && route}

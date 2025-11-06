@@ -5,7 +5,7 @@ export default function HomePage() {
   const peptides = getAllPeptides();
   const rawCategoryCounts = getCategoryCounts();
   
-  // Normalize 'skin' to 'skin & hair' for display
+  // Normalize 'skin' to 'skin & hair' for display counts
   const categoryCounts: Record<string, number> = {};
   Object.entries(rawCategoryCounts).forEach(([key, count]) => {
     const normalizedKey = key === 'skin' ? 'skin & hair' : key;
@@ -13,9 +13,9 @@ export default function HomePage() {
   });
   
   const featuredCategories = [
-    { name: 'Recovery', slug: 'recovery', icon: '🏃', color: 'text-blue-400' },
+    { name: 'Recovery', slug: 'recovery', icon: '🏃🏼', color: 'text-blue-400' },
     { name: 'Gut Health', slug: 'gut', icon: '🦠', color: 'text-green-400' },
-    { name: 'Joints & Tendons', slug: 'tendons', icon: '🦴', color: 'text-orange-400' },
+    { name: 'Joints & Tendons', slug: 'joints & tendons', icon: '🦴', color: 'text-orange-400' },
     { name: 'Weight Management', slug: 'weight', icon: '⚖️', color: 'text-purple-400' },
     { name: 'Skin & Hair', slug: 'skin & hair', icon: '✨', color: 'text-yellow-400' },
     { name: 'Metabolic', slug: 'metabolic', icon: '🔥', color: 'text-red-400' },
