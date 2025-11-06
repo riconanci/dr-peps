@@ -51,7 +51,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Emergency & Disclosures */}
+          {/* Emergency */}
           <div>
             <h3 className="text-sm font-semibold text-slate-100 uppercase tracking-wider mb-4">
               Important
@@ -59,9 +59,6 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="text-sm text-slate-400 leading-relaxed">
                 <strong className="text-red-400">Emergency:</strong> Call your local emergency number immediately
-              </div>
-              <div className="text-sm text-slate-400 leading-relaxed">
-                <strong className="text-primary-400">Disclosure:</strong> We may earn from referrals. This does not affect editorial content.
               </div>
             </div>
           </div>

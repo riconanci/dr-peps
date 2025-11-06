@@ -1,12 +1,20 @@
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/Card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/Card';
+
+export const metadata = {
+  title: 'About Dr Peps | Educational Peptide Resource',
+  description: 'Learn about Dr Peps mission to provide neutral, evidence-based peptide education. Not medical advice.',
+};
 
 export default function AboutPage() {
   return (
-    <div className="container mx-auto px-4 py-8 space-y-8">
-      <div className="space-y-4">
-        <h1 className="text-3xl font-bold text-slate-100">About Dr Peps</h1>
-        <p className="text-xl text-slate-300 leading-relaxed">
-          An evidence-based educational resource for peptide information
+    <div className="container mx-auto px-4 py-8 space-y-6">
+      {/* Hero */}
+      <div className="text-center mb-8">
+        <h1 className="text-3xl md:text-4xl font-bold text-slate-100 mb-4">
+          About Dr Peps
+        </h1>
+        <p className="text-lg text-slate-300 max-w-2xl mx-auto">
+          Evidence-based peptide education to support informed conversations with healthcare providers
         </p>
       </div>
 
@@ -17,15 +25,15 @@ export default function AboutPage() {
         </CardHeader>
         <CardContent className="space-y-4">
           <p className="text-slate-300 leading-relaxed">
-            Dr Peps provides evidence-based, neutral educational information about peptides to help individuals have informed conversations with their healthcare providers.
+            Dr Peps exists to bridge the information gap in peptide therapy. We provide clear, neutral, evidence-based information about peptides commonly discussed in wellness and medical contexts.
           </p>
           <p className="text-slate-300 leading-relaxed">
-            We believe that education should be accessible, transparent, and grounded in available scientific literature. Our goal is to present peptide information in a clear, balanced way—describing what peptides are, what people seek them for, and what the evidence shows—without making medical claims or prescribing treatments.
+            Our goal is simple: help people have better informed conversations with their healthcare providers. We believe education empowers patients and supports collaborative decision-making with licensed clinicians.
           </p>
         </CardContent>
       </Card>
 
-      {/* What We Provide */}
+      {/* What We Do */}
       <Card>
         <CardHeader>
           <CardTitle>What We Provide</CardTitle>
@@ -33,24 +41,20 @@ export default function AboutPage() {
         <CardContent>
           <ul className="space-y-3 text-slate-300">
             <li className="flex items-start">
-              <span className="text-primary-600 mr-2">•</span>
-              <span><strong className="text-slate-100">Peptide Profiles:</strong> Neutral overviews with evidence levels, risk assessments, and scientific references</span>
+              <span className="text-primary-400 mr-2">→</span>
+              <span><strong className="text-slate-100">Peptide profiles:</strong> Neutral overviews of commonly discussed peptides, including evidence quality, risks, and what people seek them for</span>
             </li>
             <li className="flex items-start">
-              <span className="text-primary-600 mr-2">•</span>
-              <span><strong className="text-slate-100">Calculators:</strong> Mathematical tools to understand reconstitution and dosing (for educational purposes only)</span>
+              <span className="text-primary-400 mr-2">→</span>
+              <span><strong className="text-slate-100">Educational calculators:</strong> Math tools for understanding reconstitution, dosing, and cycle planning (not prescriptive)</span>
             </li>
             <li className="flex items-start">
-              <span className="text-primary-600 mr-2">•</span>
-              <span><strong className="text-slate-100">Safety Information:</strong> Who should avoid certain peptides, common side effects, and interaction notes</span>
+              <span className="text-primary-400 mr-2">→</span>
+              <span><strong className="text-slate-100">Learning resources:</strong> Conceptual guides on administration routes, storage, and safety considerations</span>
             </li>
             <li className="flex items-start">
-              <span className="text-primary-600 mr-2">•</span>
-              <span><strong className="text-slate-100">Educational Resources:</strong> Conceptual guides about administration routes, storage, and safety practices</span>
-            </li>
-            <li className="flex items-start">
-              <span className="text-primary-600 mr-2">•</span>
-              <span><strong className="text-slate-100">References:</strong> Links to scientific literature and plain-language summaries</span>
+              <span className="text-primary-400 mr-2">→</span>
+              <span><strong className="text-slate-100">References:</strong> Citations to published literature so you can explore further</span>
             </li>
           </ul>
         </CardContent>
@@ -64,37 +68,37 @@ export default function AboutPage() {
         <CardContent>
           <ul className="space-y-3 text-slate-300">
             <li className="flex items-start">
-              <span className="text-danger-500 mr-2">×</span>
-              <span><strong className="text-slate-100">Prescribe or recommend:</strong> We never tell you what to take or suggest specific treatments</span>
+              <span className="text-red-400 mr-2">✗</span>
+              <span>We don&apos;t provide medical advice, diagnoses, or treatment recommendations</span>
             </li>
             <li className="flex items-start">
-              <span className="text-danger-500 mr-2">×</span>
-              <span><strong className="text-slate-100">Diagnose conditions:</strong> We don&apos;t assess symptoms or provide medical diagnoses</span>
+              <span className="text-red-400 mr-2">✗</span>
+              <span>We don&apos;t prescribe peptides or tell you what to take</span>
             </li>
             <li className="flex items-start">
-              <span className="text-danger-500 mr-2">×</span>
-              <span><strong className="text-slate-100">Replace healthcare providers:</strong> Our resources supplement, never replace, professional medical advice</span>
+              <span className="text-red-400 mr-2">✗</span>
+              <span>We don&apos;t make health claims or promises about outcomes</span>
             </li>
             <li className="flex items-start">
-              <span className="text-danger-500 mr-2">×</span>
-              <span><strong className="text-slate-100">Sell products:</strong> We are an educational resource, not a vendor or marketplace</span>
+              <span className="text-red-400 mr-2">✗</span>
+              <span>We don&apos;t provide step-by-step injection tutorials (that requires clinical training)</span>
             </li>
             <li className="flex items-start">
-              <span className="text-danger-500 mr-2">×</span>
-              <span><strong className="text-slate-100">Offer medical advice:</strong> All content is for educational purposes only</span>
+              <span className="text-red-400 mr-2">✗</span>
+              <span>We don&apos;t answer personal health questions or provide individualized guidance</span>
             </li>
           </ul>
         </CardContent>
       </Card>
 
-      {/* Our Approach */}
+      {/* Editorial Standards */}
       <Card>
         <CardHeader>
-          <CardTitle>Our Approach</CardTitle>
+          <CardTitle>Editorial Standards</CardTitle>
         </CardHeader>
-        <CardContent className="space-y-4">
-          <p className="text-slate-300 leading-relaxed">
-            We take a careful, evidence-based approach to peptide education:
+        <CardContent>
+          <p className="text-slate-300 leading-relaxed mb-4">
+            Every piece of content on Dr Peps follows strict editorial guidelines:
           </p>
           <ul className="space-y-3 text-slate-300">
             <li className="flex items-start">
@@ -135,11 +139,6 @@ export default function AboutPage() {
           <div className="p-4 bg-warning-500/10 border border-warning-500/30 rounded-lg">
             <p className="text-slate-200 leading-relaxed">
               <strong className="text-warning-500">Accuracy:</strong> While we strive for accuracy, peptide research is evolving. Information may become outdated. Last review dates are provided on peptide pages.
-            </p>
-          </div>
-          <div className="p-4 bg-warning-500/10 border border-warning-500/30 rounded-lg">
-            <p className="text-slate-200 leading-relaxed">
-              <strong className="text-warning-500">Affiliate Disclosure:</strong> We may earn commissions from referrals to clinicians or vendors. This never affects editorial content, which remains neutral and evidence-based.
             </p>
           </div>
           <div className="p-4 bg-danger-500/10 border border-danger-500/30 rounded-lg">
