@@ -347,7 +347,7 @@ export default function LibraryContent() {
                         <span
                           key={tag}
                           title={tag} // Tooltip on hover
-                          className="text-xl" // LARGER SIZE
+                          className="text-4xl" // LARGER SIZE
                         >
                           {benefitIcons[tag]?.icon || '📌'}
                         </span>
