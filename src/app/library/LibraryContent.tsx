@@ -207,9 +207,22 @@ export default function LibraryContent() {
           <span>{filtersOpen ? '▼' : '▶'}</span>
           <span>Filters</span>
           {(selectedBenefits.length > 0 || selectedRoutes.length > 0 || searchQuery) && (
-            <span className="px-2 py-0.5 bg-primary-500/20 text-primary-300 rounded-full text-sm">
-              {filteredPeptides.length}
-            </span>
+            <>
+              <span className="px-2 py-0.5 bg-primary-500/20 text-primary-300 rounded-full text-sm">
+                {filteredPeptides.length}
+              </span>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation(); // Prevent toggle of filters
+                  clearFilters();
+                }}
+                className="text-red-400 hover:text-red-300 transition-colors"
+                aria-label="Clear all filters"
+                title="Clear all filters"
+              >
+                ❌
+              </button>
+            </>
           )}
         </button>
 
@@ -273,14 +286,6 @@ export default function LibraryContent() {
           <p className="text-slate-400">
             Showing {filteredPeptides.length} of {allPeptides.length} peptides
           </p>
-          {(selectedBenefits.length > 0 || selectedRoutes.length > 0 || searchQuery) && (
-            <button
-              onClick={clearFilters}
-              className="text-sm text-primary-400 hover:text-primary-300 font-medium"
-            >
-              Clear all filters
-            </button>
-          )}
         </div>
 
         {/* Peptide Cards */}
@@ -314,6 +319,12 @@ export default function LibraryContent() {
                     )}
                   </CardHeader>
                   <CardContent className="space-y-4">
+                    {/* Evidence & Risk Badges - MOVED UP */}
+                    <div className="flex gap-2">
+                      <EvidenceBadge level={peptide.evidence_level} size="sm" />
+                      <RiskBadge level={peptide.risk_level} size="sm" />
+                    </div>
+
                     {/* Routes */}
                     <div className="flex flex-wrap gap-1.5">
                       {peptide.typical_route.map((route) => (
@@ -330,27 +341,17 @@ export default function LibraryContent() {
                       {peptide.overview}
                     </p>
                     
-                    {/* Benefit Tags */}
+                    {/* Benefit Tags - LARGER EMOJIS */}
                     <div className="flex flex-wrap gap-2">
-                      {normalizedTags.slice(0, 3).map((tag) => (
+                      {normalizedTags.map((tag) => (
                         <span
                           key={tag}
-                          className="px-2 py-1 bg-slate-700/50 text-slate-300 rounded text-xs"
+                          title={tag} // Tooltip on hover
+                          className="text-xl" // LARGER SIZE
                         >
-                          {benefitIcons[tag]?.icon || '📌'} {tag}
+                          {benefitIcons[tag]?.icon || '📌'}
                         </span>
                       ))}
-                      {normalizedTags.length > 3 && (
-                        <span className="px-2 py-1 bg-slate-700/50 text-slate-400 rounded text-xs">
-                          +{normalizedTags.length - 3} more
-                        </span>
-                      )}
-                    </div>
-                    
-                    {/* Evidence & Risk Badges */}
-                    <div className="flex gap-2">
-                      <EvidenceBadge level={peptide.evidence_level} size="sm" />
-                      <RiskBadge level={peptide.risk_level} size="sm" />
                     </div>
                   </CardContent>
                 </Card>
@@ -362,12 +363,6 @@ export default function LibraryContent() {
         {filteredPeptides.length === 0 && (
           <div className="text-center py-12">
             <p className="text-slate-400 text-lg">No peptides match your filters.</p>
-            <button
-              onClick={clearFilters}
-              className="mt-4 text-primary-400 hover:text-primary-300 font-medium"
-            >
-              Clear all filters
-            </button>
           </div>
         )}
       </div>
