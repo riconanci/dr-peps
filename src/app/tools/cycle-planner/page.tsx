@@ -1,8 +1,10 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/Card';
+import { getAllPeptides } from '@/lib/peptides';
+import { normalizeSearchString } from '@/lib/normalize-search';
 
 type Peptide = {
   id: string;
@@ -38,6 +40,51 @@ export default function CyclePlannerPage() {
   ]);
   const [schedule, setSchedule] = useState<DaySchedule[]>([]);
   const [showSchedule, setShowSchedule] = useState(false);
+  
+  // Autocomplete state
+  const [focusedPeptideId, setFocusedPeptideId] = useState<string | null>(null);
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const suggestionsRef = useRef<HTMLDivElement>(null);
+  
+  // Get all available peptides for autocomplete
+  const allPeptides = useMemo(() => getAllPeptides(), []);
+  
+  // Generate suggestions for focused peptide
+  const suggestions = useMemo(() => {
+    if (!focusedPeptideId || !showSuggestions) return [];
+    
+    const focusedPeptide = peptides.find(p => p.id === focusedPeptideId);
+    if (!focusedPeptide || !focusedPeptide.name.trim()) return [];
+    
+    const query = normalizeSearchString(focusedPeptide.name);
+    
+    return allPeptides
+      .filter(p => {
+        const nameMatch = normalizeSearchString(p.name).includes(query);
+        const aliasMatch = p.aliases.some(alias => 
+          normalizeSearchString(alias).includes(query)
+        );
+        return nameMatch || aliasMatch;
+      })
+      .slice(0, 6)
+      .map(p => ({
+        name: p.name,
+        aliases: p.aliases
+      }));
+  }, [focusedPeptideId, peptides, allPeptides, showSuggestions]);
+  
+  // Close suggestions when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (suggestionsRef.current && !suggestionsRef.current.contains(event.target as Node)) {
+        setShowSuggestions(false);
+        setFocusedPeptideId(null);
+      }
+    };
+    
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   const addPeptide = () => {
     if (peptides.length < 3) {
@@ -62,6 +109,12 @@ export default function CyclePlannerPage() {
     setPeptides(
       peptides.map((p) => (p.id === id ? { ...p, [field]: value } : p))
     );
+  };
+  
+  const selectSuggestion = (id: string, name: string) => {
+    updatePeptide(id, 'name', name);
+    setShowSuggestions(false);
+    setFocusedPeptideId(null);
   };
 
   const toggleDay = (id: string, dayIndex: number) => {
@@ -200,8 +253,8 @@ export default function CyclePlannerPage() {
                     )}
                   </div>
 
-                  {/* Name */}
-                  <div>
+                  {/* Name with Autocomplete */}
+                  <div className="relative">
                     <label className="block text-sm font-medium text-slate-100 mb-1.5">
                       Name
                     </label>
@@ -209,9 +262,46 @@ export default function CyclePlannerPage() {
                       type="text"
                       placeholder="e.g., BPC-157"
                       value={peptide.name}
-                      onChange={(e) => updatePeptide(peptide.id, 'name', e.target.value)}
+                      onChange={(e) => {
+                        updatePeptide(peptide.id, 'name', e.target.value);
+                        setFocusedPeptideId(peptide.id);
+                        setShowSuggestions(true);
+                      }}
+                      onFocus={() => {
+                        setFocusedPeptideId(peptide.id);
+                        if (peptide.name.trim()) {
+                          setShowSuggestions(true);
+                        }
+                      }}
                       className="input-field w-full text-[16px]"
+                      autoComplete="off"
                     />
+                    
+                    {/* Suggestions Dropdown */}
+                    {focusedPeptideId === peptide.id && showSuggestions && suggestions.length > 0 && (
+                      <div 
+                        ref={suggestionsRef}
+                        className="absolute z-10 w-full mt-1 bg-dark-800 border border-dark-600 rounded-lg shadow-lg max-h-48 overflow-y-auto"
+                      >
+                        {suggestions.map((suggestion, idx) => (
+                          <button
+                            key={idx}
+                            type="button"
+                            onClick={() => selectSuggestion(peptide.id, suggestion.name)}
+                            className="w-full text-left px-3 py-2 hover:bg-dark-700 transition-colors border-b border-dark-700 last:border-b-0"
+                          >
+                            <div className="text-sm font-medium text-slate-100">
+                              {suggestion.name}
+                            </div>
+                            {suggestion.aliases.length > 0 && (
+                              <div className="text-xs text-slate-400 mt-0.5">
+                                {suggestion.aliases.join(', ')}
+                              </div>
+                            )}
+                          </button>
+                        ))}
+                      </div>
+                    )}
                   </div>
 
                   {/* Dose */}
