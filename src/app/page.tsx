@@ -26,7 +26,9 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="text-center space-y-6 py-8">
         <h1 className="text-5xl sm:text-6xl font-bold text-slate-100">
-          Welcome to <span className="text-primary-400">Dr Peps</span>
+          Welcome to
+          <br />
+          <span className="text-primary-400">Dr Peps</span>
         </h1>
         <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
           Evidence-based peptide education. Explore our library of <span className="text-primary-400 font-semibold">{peptides.length} peptides</span>, use our calculators, and learn about safe practices.
