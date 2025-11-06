@@ -11,7 +11,7 @@ import { normalizeSearchString } from '@/lib/normalize-search';
 
 // Icon mapping for benefits
 const benefitIcons: Record<string, { icon: string; label: string }> = {
-  recovery: { icon: '🏃', label: 'Recovery' },
+  recovery: { icon: '🏃🏼', label: 'Recovery' },
   gut: { icon: '🦠', label: 'Gut Health' },
   'joints & tendons': { icon: '🦴', label: 'Joints & Tendons' },
   joints: { icon: '🦴', label: 'Joints' },
