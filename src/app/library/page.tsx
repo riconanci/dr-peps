@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo, useEffect, Suspense } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { getAllPeptides } from '@/lib/peptides';
@@ -13,20 +13,29 @@ import { normalizeSearchString } from '@/lib/normalize-search';
 const benefitIcons: Record<string, { icon: string; label: string }> = {
   recovery: { icon: '🏃', label: 'Recovery' },
   gut: { icon: '🦠', label: 'Gut Health' },
+  'joints & tendons': { icon: '🦴', label: 'Joints & Tendons' },
   joints: { icon: '🦴', label: 'Joints' },
   tendons: { icon: '💪🏼', label: 'Tendons' },
   weight: { icon: '⚖️', label: 'Weight' },
   metabolic: { icon: '🔥', label: 'Metabolic' },
   'skin & hair': { icon: '✨', label: 'Skin & Hair' },
-  skin: { icon: '✨', label: 'Skin & Hair' }, // Alias
+  skin: { icon: '✨', label: 'Skin & Hair' },
   cognitive: { icon: '🧠', label: 'Cognitive' },
   sleep: { icon: '💤', label: 'Sleep' },
   libido: { icon: '❤️', label: 'Libido' },
   growth: { icon: '📈', label: 'Growth' },
 };
 
-// This is the component that uses useSearchParams - it MUST be wrapped in Suspense
-function LibraryContent() {
+// Route icon mapping
+const routeIcons: Record<string, string> = {
+  subQ: '💉',
+  oral: '💊',
+  nasal: '👃',
+  topical: '🧴',
+  IM: '💉',
+};
+
+export default function LibraryPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const allPeptides = getAllPeptides();
@@ -68,14 +77,14 @@ function LibraryContent() {
     new Set(allPeptides.flatMap((p) => p.typical_route))
   ).sort();
 
-  // Generate search suggestions using normalized matching
-  const searchSuggestions = useMemo((): SearchSuggestion[] => {
-    if (!searchQuery.trim()) return [];
+  // Filter peptides
+  const filteredPeptides = useMemo(() => {
+    let results = allPeptides;
 
-    const normalizedQuery = normalizeSearchString(searchQuery);
-    
-    return allPeptides
-      .filter((peptide) => {
+    // Search filter
+    if (searchQuery.trim()) {
+      const normalizedQuery = normalizeSearchString(searchQuery);
+      results = results.filter((peptide) => {
         const matchesName = normalizeSearchString(peptide.name).includes(normalizedQuery);
         const matchesAlias = peptide.aliases.some((alias) =>
           normalizeSearchString(alias).includes(normalizedQuery)
@@ -84,51 +93,74 @@ function LibraryContent() {
           normalizeSearchString(tag).includes(normalizedQuery)
         );
         return matchesName || matchesAlias || matchesTag;
-      })
-      .map((peptide) => ({
-        name: peptide.name,
-        slug: peptide.slug,
-        aliases: peptide.aliases,
-      }));
-  }, [allPeptides, searchQuery]);
+      });
+    }
 
-  const filteredPeptides = useMemo(() => {
-    return allPeptides.filter((peptide) => {
-      // Search filter with normalized matching
-      if (searchQuery) {
-        const normalizedQuery = normalizeSearchString(searchQuery);
-        const matchesName = normalizeSearchString(peptide.name).includes(normalizedQuery);
-        const matchesAlias = peptide.aliases.some((alias) =>
-          normalizeSearchString(alias).includes(normalizedQuery)
-        );
-        const matchesTag = peptide.category_tags.some((tag) =>
-          normalizeSearchString(tag).includes(normalizedQuery)
-        );
-        if (!matchesName && !matchesAlias && !matchesTag) return false;
-      }
-
-      // Benefits filter - AND LOGIC
-      // Now requires ALL selected benefits to be present
-      if (selectedBenefits.length > 0) {
+    // Benefits filter (AND logic - must have ALL selected benefits)
+    if (selectedBenefits.length > 0) {
+      results = results.filter((peptide) => {
         const normalizedTags = peptide.category_tags.map((tag) =>
           tag === 'skin' ? 'skin & hair' : tag
         );
-        // Changed from .some() to .every() for AND logic
-        if (!selectedBenefits.every((benefit) => normalizedTags.includes(benefit))) {
-          return false;
-        }
-      }
+        return selectedBenefits.every((benefit) => normalizedTags.includes(benefit));
+      });
+    }
 
-      // Routes filter - OR logic (peptide needs at least ONE selected route)
-      if (selectedRoutes.length > 0) {
-        if (!selectedRoutes.some((route) => peptide.typical_route.includes(route))) {
-          return false;
-        }
-      }
+    // Routes filter (OR logic - must have ANY selected route)
+    if (selectedRoutes.length > 0) {
+      results = results.filter((peptide) =>
+        selectedRoutes.some((route) => peptide.typical_route.includes(route))
+      );
+    }
 
-      return true;
-    });
+    return results;
   }, [allPeptides, searchQuery, selectedBenefits, selectedRoutes]);
+
+  // Generate search suggestions
+  const searchSuggestions: SearchSuggestion[] = useMemo(() => {
+    if (!searchQuery.trim()) return [];
+
+    const normalizedQuery = normalizeSearchString(searchQuery);
+    const suggestions: SearchSuggestion[] = [];
+
+    allPeptides.forEach((peptide) => {
+      // Name matches
+      if (normalizeSearchString(peptide.name).includes(normalizedQuery)) {
+        suggestions.push({
+          text: peptide.name,
+          type: 'name',
+          href: `/p/${peptide.slug}`,
+        });
+      }
+
+      // Alias matches
+      peptide.aliases.forEach((alias) => {
+        if (normalizeSearchString(alias).includes(normalizedQuery)) {
+          suggestions.push({
+            text: `${alias} (${peptide.name})`,
+            type: 'alias',
+            href: `/p/${peptide.slug}`,
+          });
+        }
+      });
+
+      // Category matches
+      peptide.category_tags.forEach((tag) => {
+        if (normalizeSearchString(tag).includes(normalizedQuery)) {
+          const displayTag = tag === 'skin' ? 'skin & hair' : tag;
+          if (!suggestions.some((s) => s.text === displayTag && s.type === 'category')) {
+            suggestions.push({
+              text: displayTag,
+              type: 'category',
+              href: `/library?benefits=${encodeURIComponent(displayTag)}`,
+            });
+          }
+        }
+      });
+    });
+
+    return suggestions.slice(0, 8);
+  }, [searchQuery, allPeptides]);
 
   const toggleBenefit = (benefit: string) => {
     setSelectedBenefits((prev) =>
@@ -148,70 +180,48 @@ function LibraryContent() {
     setSelectedRoutes([]);
   };
 
-  const hasActiveFilters = selectedBenefits.length > 0 || selectedRoutes.length > 0 || searchQuery;
-  const activeFilterCount = selectedBenefits.length + selectedRoutes.length + (searchQuery ? 1 : 0);
-
   return (
     <div className="container mx-auto px-4 py-8 space-y-8">
+      {/* Header */}
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold text-slate-100">Peptide Library</h1>
-        <p className="text-slate-300 leading-relaxed">
-          Browse {allPeptides.length} peptide profiles with evidence levels, safety information, and references.
+        <h1 className="text-4xl font-bold text-slate-100">Peptide Library</h1>
+        <p className="text-slate-300 text-lg">
+          Browse our comprehensive database of {allPeptides.length} peptide profiles with
+          evidence levels, safety information, and references.
         </p>
       </div>
 
-      {/* Search with Autocomplete */}
-      <SearchInput
-        value={searchQuery}
-        onChange={setSearchQuery}
-        placeholder="Search peptides by name or tag..."
-        suggestions={searchSuggestions}
-        onSelectSuggestion={(suggestion) => {
-          setSearchQuery(suggestion.name);
-        }}
-      />
+      {/* Search */}
+      <div className="max-w-2xl">
+        <SearchInput
+          value={searchQuery}
+          onChange={setSearchQuery}
+          suggestions={searchSuggestions}
+          placeholder="Search peptides by name, alias, or benefit..."
+        />
+      </div>
 
-      {/* Filters Container */}
-      <div className="bg-slate-800 border border-slate-700 rounded-lg p-6 space-y-6">
-        {/* Filter Header */}
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <button
-              onClick={() => setFiltersOpen(!filtersOpen)}
-              className="flex items-center gap-2 text-slate-100 font-semibold hover:text-primary-400 transition-colors"
-              aria-label={filtersOpen ? 'Collapse filters' : 'Expand filters'}
-            >
-              <span>Filters</span>
-              {activeFilterCount > 0 && (
-                <span className="bg-primary-600 text-white text-xs font-bold px-2 py-1 rounded-full">
-                  {activeFilterCount}
-                </span>
-              )}
-              <span className="text-slate-400">{filtersOpen ? '▼' : '▶'}</span>
-            </button>
-          </div>
-          {hasActiveFilters && (
-            <button
-              onClick={clearFilters}
-              className="text-sm text-primary-400 hover:text-primary-300 font-medium transition-colors"
-            >
-              Clear all
-            </button>
+      {/* Filters */}
+      <div className="space-y-4">
+        <button
+          onClick={() => setFiltersOpen(!filtersOpen)}
+          className="flex items-center gap-2 text-slate-300 hover:text-slate-100 font-medium"
+        >
+          <span>{filtersOpen ? '▼' : '▶'}</span>
+          <span>Filters</span>
+          {(selectedBenefits.length > 0 || selectedRoutes.length > 0) && (
+            <span className="px-2 py-0.5 bg-primary-500/20 text-primary-300 rounded-full text-sm">
+              {selectedBenefits.length + selectedRoutes.length}
+            </span>
           )}
-        </div>
+        </button>
 
-        {/* Filter Sections */}
         {filtersOpen && (
-          <div className="space-y-6">
+          <div className="space-y-6 card p-6">
             {/* Benefits Filter */}
             <div className="space-y-3">
-              <h3 className="text-sm font-semibold text-slate-300 uppercase tracking-wide">
-                Filter by Benefits
-                {selectedBenefits.length > 0 && (
-                  <span className="ml-2 text-xs text-slate-400">
-                    (Showing peptides with ALL selected)
-                  </span>
-                )}
+              <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wide">
+                Filter by Benefits (shows peptides with ALL selected)
               </h3>
               <div className="flex flex-wrap gap-2">
                 {benefits.map((benefit) => (
@@ -224,17 +234,16 @@ function LibraryContent() {
                         : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
                     }`}
                   >
-                    <span className="mr-2">{benefitIcons[benefit]?.icon || '📌'}</span>
-                    {benefit}
+                    {benefitIcons[benefit]?.icon || '📌'} {benefit}
                   </button>
                 ))}
               </div>
             </div>
 
-            {/* Administration Route Filter */}
+            {/* Routes Filter */}
             <div className="space-y-3">
-              <h3 className="text-sm font-semibold text-slate-300 uppercase tracking-wide">
-                Filter by Administration
+              <h3 className="text-sm font-semibold text-slate-400 uppercase tracking-wide">
+                Filter by Administration (shows peptides with ANY selected)
               </h3>
               <div className="flex flex-wrap gap-2">
                 {routes.map((route) => (
@@ -249,7 +258,7 @@ function LibraryContent() {
                   >
                     {route === 'subQ' && '💉 SubQ'}
                     {route === 'oral' && '💊 Oral'}
-                    {route === 'nasal' && '👃🏼 Nasal'}
+                    {route === 'nasal' && '👃 Nasal'}
                     {route === 'topical' && '🧴 Topical'}
                     {route === 'IM' && '💉 IM'}
                     {!['subQ', 'oral', 'nasal', 'topical', 'IM'].includes(route) && route}
@@ -267,9 +276,17 @@ function LibraryContent() {
           <p className="text-slate-400">
             Showing {filteredPeptides.length} of {allPeptides.length} peptides
           </p>
+          {(selectedBenefits.length > 0 || selectedRoutes.length > 0 || searchQuery) && (
+            <button
+              onClick={clearFilters}
+              className="text-sm text-primary-400 hover:text-primary-300 font-medium"
+            >
+              Clear all filters
+            </button>
+          )}
         </div>
 
-        {/* Current URL params for passing to peptide cards */}
+        {/* Peptide Cards */}
         <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {filteredPeptides.map((peptide) => {
             // Normalize "skin" to "skin & hair" for display
@@ -300,10 +317,23 @@ function LibraryContent() {
                     )}
                   </CardHeader>
                   <CardContent className="space-y-4">
+                    {/* Routes - NEW! */}
+                    <div className="flex flex-wrap gap-1.5">
+                      {peptide.typical_route.map((route) => (
+                        <span
+                          key={route}
+                          className="px-2 py-1 bg-blue-600/20 border border-blue-500/30 text-blue-300 rounded text-xs font-medium"
+                        >
+                          {routeIcons[route] || '💉'} {route}
+                        </span>
+                      ))}
+                    </div>
+
                     <p className="text-slate-300 text-sm leading-relaxed line-clamp-3">
                       {peptide.overview}
                     </p>
                     
+                    {/* Benefit Tags */}
                     <div className="flex flex-wrap gap-2">
                       {normalizedTags.slice(0, 3).map((tag) => (
                         <span
@@ -320,6 +350,7 @@ function LibraryContent() {
                       )}
                     </div>
                     
+                    {/* Evidence & Risk Badges */}
                     <div className="flex gap-2">
                       <EvidenceBadge level={peptide.evidence_level} size="sm" />
                       <RiskBadge level={peptide.risk_level} size="sm" />
@@ -344,14 +375,5 @@ function LibraryContent() {
         )}
       </div>
     </div>
-  );
-}
-
-// This is the actual page export - it just wraps LibraryContent in Suspense
-export default function LibraryPage() {
-  return (
-    <Suspense fallback={<div className="container mx-auto px-4 py-8 text-center text-slate-400">Loading library...</div>}>
-      <LibraryContent />
-    </Suspense>
   );
 }
