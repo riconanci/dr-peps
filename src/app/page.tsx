@@ -16,7 +16,7 @@ export default function HomePage() {
     { name: 'Recovery', slug: 'recovery', icon: '🏃🏼', color: 'text-blue-400' },
     { name: 'Gut Health', slug: 'gut', icon: '🦠', color: 'text-green-400' },
     { name: 'Joints & Tendons', slug: 'joints & tendons', icon: '🦴', color: 'text-orange-400' },
-    { name: 'Weight Management', slug: 'weight', icon: '⚖️', color: 'text-purple-400' },
+    { name: 'Weight', slug: 'weight', icon: '⚖️', color: 'text-purple-400' },
     { name: 'Skin & Hair', slug: 'skin & hair', icon: '✨', color: 'text-yellow-400' },
     { name: 'Metabolic', slug: 'metabolic', icon: '🔥', color: 'text-red-400' },
   ];
