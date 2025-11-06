@@ -11,7 +11,7 @@ import { normalizeSearchString } from '@/lib/normalize-search';
 
 // Icon mapping for benefits
 const benefitIcons: Record<string, { icon: string; label: string }> = {
-  recovery: { icon: '🏃🏼', label: 'Recovery' },
+  recovery: { icon: '🏃', label: 'Recovery' },
   gut: { icon: '🦠', label: 'Gut Health' },
   'joints & tendons': { icon: '🦴', label: 'Joints & Tendons' },
   joints: { icon: '🦴', label: 'Joints' },
@@ -206,9 +206,9 @@ export default function LibraryContent() {
         >
           <span>{filtersOpen ? '▼' : '▶'}</span>
           <span>Filters</span>
-          {(selectedBenefits.length > 0 || selectedRoutes.length > 0) && (
+          {(selectedBenefits.length > 0 || selectedRoutes.length > 0 || searchQuery) && (
             <span className="px-2 py-0.5 bg-primary-500/20 text-primary-300 rounded-full text-sm">
-              {selectedBenefits.length + selectedRoutes.length}
+              {filteredPeptides.length}
             </span>
           )}
         </button>
