@@ -345,24 +345,27 @@ export default function CyclePlannerPage() {
             })}
           </div>
 
-          {/* Add Peptide Button */}
-          {peptides.length < 3 && (
-            <button
-              onClick={addPeptide}
-              className="w-full py-3 border-2 border-dashed border-dark-600 hover:border-primary-500/50 rounded-lg text-slate-300 hover:text-primary-400 transition-colors text-sm font-medium"
-            >
-              + Add Peptide
-            </button>
-          )}
+          {/* Buttons - centered and constrained on desktop */}
+          <div className="space-y-4 flex flex-col items-center">
+            {/* Add Peptide Button */}
+            {peptides.length < 3 && (
+              <button
+                onClick={addPeptide}
+                className="w-full md:w-auto md:min-w-[400px] py-3 border-2 border-dashed border-dark-600 hover:border-primary-500/50 rounded-lg text-slate-300 hover:text-primary-400 transition-colors text-sm font-medium"
+              >
+                + Add Peptide
+              </button>
+            )}
 
-          {/* Generate Button */}
-          <button
-            onClick={generateSchedule}
-            className="btn-primary w-full"
-            disabled={peptides.every((p) => p.name.trim() === '')}
-          >
-            Generate Schedule
-          </button>
+            {/* Generate Button */}
+            <button
+              onClick={generateSchedule}
+              className="btn-primary w-full md:w-auto md:min-w-[400px]"
+              disabled={peptides.every((p) => p.name.trim() === '')}
+            >
+              Generate Schedule
+            </button>
+          </div>
         </CardContent>
       </Card>
 
