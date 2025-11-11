@@ -418,11 +418,11 @@ export default function CyclePlannerPage() {
 
           {/* Schedule Display */}
           <Card>
-            <CardContent className="pt-4">
+            <CardContent className="pt-6">
               {/* Mobile: Accordion style */}
-              <div className="md:hidden space-y-2">
+              <div className="md:hidden space-y-3">
                 {schedule.map((daySchedule, dayIndex) => (
-                  <div key={dayIndex} className="space-y-1.5">
+                  <div key={dayIndex} className="space-y-2">
                     <div className="font-medium text-slate-200 text-sm">
                       {daySchedule.day}
                     </div>
@@ -434,7 +434,7 @@ export default function CyclePlannerPage() {
                           return (
                             <div
                               key={pIndex}
-                              className={`${colorScheme.bg} ${colorScheme.border} ${colorScheme.text} border rounded-lg px-3 py-1.5 text-sm flex-1 min-w-0`}
+                              className={`${colorScheme.bg} ${colorScheme.border} ${colorScheme.text} border rounded-lg px-3 py-2 text-sm flex-1 min-w-0`}
                             >
                               <div className="font-medium truncate">{peptide.name}</div>
                               <div className="text-xs opacity-90 mt-1 min-h-[16px]">
