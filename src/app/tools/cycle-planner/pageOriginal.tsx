@@ -434,9 +434,9 @@ export default function CyclePlannerPage() {
                           return (
                             <div
                               key={pIndex}
-                              className={`${colorScheme.bg} ${colorScheme.border} ${colorScheme.text} border rounded-lg px-3 py-2 text-sm flex-1 min-w-0`}
+                              className={`${colorScheme.bg} ${colorScheme.border} ${colorScheme.text} border rounded-lg px-3 py-2 text-sm flex-1`}
                             >
-                              <div className="font-medium truncate">{peptide.name}</div>
+                              <div className="font-medium">{peptide.name}</div>
                               <div className="text-xs opacity-90 mt-1 min-h-[16px]">
                                 {peptide.dose || '\u00A0'}
                               </div>
@@ -467,9 +467,9 @@ export default function CyclePlannerPage() {
                             return (
                               <div
                                 key={pIndex}
-                                className={`${colorScheme.bg} ${colorScheme.border} ${colorScheme.text} border rounded px-2 py-2 text-xs flex-1 min-w-0 flex flex-col justify-center`}
+                                className={`${colorScheme.bg} ${colorScheme.border} ${colorScheme.text} border rounded px-2 py-2 text-xs flex-1 flex flex-col justify-center`}
                               >
-                                <div className="font-medium truncate">
+                                <div className="font-medium truncate text-center">
                                   {peptide.name}
                                 </div>
                                 <div className="opacity-90 text-[10px] text-center mt-1 min-h-[12px]">
