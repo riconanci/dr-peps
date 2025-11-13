@@ -48,6 +48,8 @@ export default function PeptidePage({ params, searchParams }: PageProps) {
     ? `/library${searchParams.return}`
     : '/library';
 
+  const reconUrl = `/tools/reconstitution?vial_mg=${peptide.reconstitution.vial_total_mg}&diluent_ml=${peptide.reconstitution.common_diluents_ml[0]}`;
+
   return (
     <div className="container mx-auto px-4 py-8 space-y-8">
       {/* Header */}
@@ -177,6 +179,37 @@ export default function PeptidePage({ params, searchParams }: PageProps) {
           <p className="text-sm text-slate-400 italic">
             This is descriptive information only. Always consult a licensed healthcare provider for dosing guidance.
           </p>
+        </CardContent>
+      </Card>
+
+      {/* Reconstitution */}
+      <Card>
+        <CardHeader>
+          <CardTitle>Reconstitution</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div>
+            <p className="text-sm text-slate-400 mb-2">Typical vial size:</p>
+            <p className="text-white font-medium">{peptide.reconstitution.vial_total_mg} mg</p>
+          </div>
+          <div>
+            <p className="text-sm text-slate-400 mb-2">Common diluent volumes:</p>
+            <p className="text-white font-medium">
+              {peptide.reconstitution.common_diluents_ml.join(' mL, ')} mL
+            </p>
+          </div>
+          <div>
+            <p className="text-sm text-slate-400 mb-2">Example doses:</p>
+            <p className="text-white font-medium">
+              {peptide.reconstitution.example_doses_mg.join(' mg, ')} mg
+            </p>
+          </div>
+          <Link
+            href={reconUrl}
+            className="inline-block px-4 py-2 bg-primary-600 hover:bg-primary-500 text-white rounded-lg font-medium transition-colors"
+          >
+            Open in Calculator →
+          </Link>
         </CardContent>
       </Card>
 

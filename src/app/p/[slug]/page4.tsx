@@ -180,6 +180,43 @@ export default function PeptidePage({ params, searchParams }: PageProps) {
         </CardContent>
       </Card>
 
+      {/* Reconstitution Reference */}
+      <Card>
+        <CardHeader>
+          <CardTitle>Reconstitution Reference</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div>
+            <p className="text-sm text-slate-400 mb-2">Typical vial size:</p>
+            <p className="text-white font-medium">{peptide.reconstitution.vial_total_mg} mg</p>
+          </div>
+          <div>
+            <p className="text-sm text-slate-400 mb-2">Common diluent volumes:</p>
+            <p className="text-white font-medium">
+              {peptide.reconstitution.common_diluents_ml.join(' mL, ')} mL
+            </p>
+          </div>
+          <div>
+            <p className="text-sm text-slate-400 mb-2">Example doses:</p>
+            <p className="text-white font-medium">
+              {peptide.reconstitution.example_doses_mg.join(' mg, ')} mg
+            </p>
+          </div>
+          
+          <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-4 mt-4">
+            <p className="text-slate-300 leading-relaxed mb-3">
+              Use the Dose Calculator to plan your reconstitution and determine the exact volume and units for your desired dose.
+            </p>
+            <Link
+              href="/tools/dose"
+              className="inline-block px-4 py-2 bg-primary-600 hover:bg-primary-500 text-white rounded-lg font-medium transition-colors"
+            >
+              Go to Dose Calculator →
+            </Link>
+          </div>
+        </CardContent>
+      </Card>
+
       {/* Storage */}
       <Card>
         <CardHeader>
