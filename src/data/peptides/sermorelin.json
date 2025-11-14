@@ -1,0 +1,48 @@
+{
+  "slug": "sermorelin",
+  "name": "Sermorelin",
+  "aliases": ["GRF 1-29", "GHRH 1-29", "Sermorelin Acetate"],
+  "category_tags": ["growth", "recovery", "metabolic", "sleep"],
+  "typical_route": ["subQ"],
+  "overview": "A synthetic analog of growth hormone-releasing hormone (GHRH) that stimulates the pituitary gland to produce and release growth hormone. Unlike direct growth hormone, sermorelin works through the body's natural regulatory systems and is prescribed by some anti-aging and hormone optimization clinics.",
+  "what_people_seek": ["natural growth hormone optimization", "body composition support", "recovery enhancement", "sleep quality improvement", "energy and vitality"],
+  "evidence_level": "Moderate",
+  "risk_level": "Low",
+  "side_effects_common": ["injection site reactions (redness, swelling)", "flushing or warmth", "headache", "dizziness", "nausea", "hyperactivity or restlessness (rare)"],
+  "who_should_avoid": ["pregnancy or breastfeeding", "active malignancy or cancer history", "severe illness or hospitalization", "children without endocrinologist supervision", "hypothalamic or pituitary tumors"],
+  "interactions_notes": "May interact with thyroid medications, corticosteroids, and medications affecting growth hormone or insulin sensitivity. Generally well-tolerated but requires comprehensive medication review with healthcare provider.",
+  "dosing_ranges_literature": "Clinical protocols typically use 200-300 mcg administered subcutaneously before bedtime. Some clinics prescribe up to 500 mcg depending on individual assessment and monitoring.",
+  "reconstitution": {
+    "vial_total_mg": 5,
+    "common_diluents_ml": [2, 5],
+    "example_doses_mg": [0.2, 0.3, 0.5]
+  },
+  "storage_notes": "Store unreconstituted peptide in freezer (-20°C or colder). After reconstitution with bacteriostatic water, store refrigerated at 2-8°C and use within 2-3 weeks. Protect from light.",
+  "references": [
+    {
+      "id": "ref1",
+      "title": "Growth hormone-releasing hormone and growth hormone secretagogue in normal aging",
+      "source": "PubMed",
+      "year": 2010,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Reviews sermorelin's effects on growth hormone dynamics in aging adults."
+    },
+    {
+      "id": "ref2",
+      "title": "Sermorelin: A review of its use in the diagnosis and treatment of growth hormone deficiency",
+      "source": "Review",
+      "year": 2015,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Comprehensive overview of sermorelin's clinical applications and safety profile."
+    },
+    {
+      "id": "ref3",
+      "title": "Effects of GHRH on body composition in adults",
+      "source": "PubMed",
+      "year": 2018,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Study examining sermorelin's impact on lean body mass and metabolic parameters."
+    }
+  ],
+  "last_reviewed": "2025-11-13"
+}

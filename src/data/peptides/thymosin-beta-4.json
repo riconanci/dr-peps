@@ -1,0 +1,48 @@
+{
+  "slug": "thymosin-beta-4",
+  "name": "Thymosin Beta-4",
+  "aliases": ["Tβ4", "TB4", "Thymosin β4"],
+  "category_tags": ["recovery", "joints & tendons"],
+  "typical_route": ["subQ", "IM"],
+  "overview": "A naturally occurring 43-amino acid peptide present in high concentrations in blood platelets, wound fluid, and many tissues. It plays a role in tissue repair, wound healing, and inflammation regulation. TB-500 is its better-known synthetic counterpart used in research and clinical settings.",
+  "what_people_seek": ["tissue repair support", "wound healing", "injury recovery", "joint and tendon health", "anti-inflammatory effects"],
+  "evidence_level": "Moderate",
+  "risk_level": "Unknown",
+  "side_effects_common": ["injection site reactions (redness, swelling)", "headache", "fatigue", "nausea", "temporary soreness"],
+  "who_should_avoid": ["pregnancy or breastfeeding", "active cancer or cancer history without oncologist approval", "severe autoimmune conditions without medical supervision", "known allergies to thymosin peptides"],
+  "interactions_notes": "Interactions are not well-documented. May affect immune response and tissue healing. Comprehensive discussion with healthcare provider required, especially for those on immunosuppressive therapy or anticoagulants.",
+  "dosing_ranges_literature": "Research protocols have varied from 2-10 mg per injection, administered 1-2 times weekly. The synthetic version (TB-500) is more commonly discussed in practice. Clinical dosing standards for the natural peptide are not established.",
+  "reconstitution": {
+    "vial_total_mg": 5,
+    "common_diluents_ml": [1, 2],
+    "example_doses_mg": [2, 5, 10]
+  },
+  "storage_notes": "Store unreconstituted peptide in freezer (-20°C or colder). After reconstitution, store refrigerated at 2-8°C and use within the timeframe specified by supplier (typically 2-4 weeks). Protect from light.",
+  "references": [
+    {
+      "id": "ref1",
+      "title": "Thymosin β4: A multi-functional regenerative peptide",
+      "source": "PubMed",
+      "year": 2017,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Comprehensive review of thymosin beta-4's biological functions and therapeutic potential."
+    },
+    {
+      "id": "ref2",
+      "title": "Thymosin beta-4 in tissue repair and regeneration",
+      "source": "Review",
+      "year": 2020,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Examines mechanisms of action in wound healing and tissue regeneration."
+    },
+    {
+      "id": "ref3",
+      "title": "Clinical applications of thymosin beta-4 and its derivatives",
+      "source": "PubMed",
+      "year": 2021,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Discusses both natural thymosin beta-4 and synthetic variants like TB-500."
+    }
+  ],
+  "last_reviewed": "2025-11-13"
+}

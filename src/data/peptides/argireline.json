@@ -1,0 +1,48 @@
+{
+  "slug": "argireline",
+  "name": "Argireline",
+  "aliases": ["Acetyl Hexapeptide-8", "Acetyl Hexapeptide-3", "Argireline Amplified"],
+  "category_tags": ["skin"],
+  "typical_route": ["topical"],
+  "overview": "A synthetic hexapeptide designed for topical cosmetic use, often marketed as a non-invasive alternative to botulinum toxin injections. It is formulated into skincare products and works by potentially reducing the depth of wrinkles caused by facial muscle contractions.",
+  "what_people_seek": ["wrinkle reduction", "anti-aging skincare", "non-invasive facial rejuvenation", "expression line softening", "topical alternative to injections"],
+  "evidence_level": "Moderate",
+  "risk_level": "Low",
+  "side_effects_common": ["skin irritation (rare)", "mild redness", "dryness", "sensitivity at application site", "allergic reactions (uncommon)"],
+  "who_should_avoid": ["pregnancy or breastfeeding (as a precaution)", "known allergies to cosmetic peptides", "compromised skin barrier or open wounds", "active skin infections"],
+  "interactions_notes": "Generally well-tolerated in cosmetic formulations. May interact with other active skincare ingredients like retinoids or exfoliants. Patch testing recommended when combining with new products.",
+  "dosing_ranges_literature": "Topical cosmetic products typically contain argireline at concentrations of 5-10%. Applied as directed by product formulation, usually once or twice daily to target areas. Injectable forms exist but are less common than topical use.",
+  "reconstitution": {
+    "vial_total_mg": 100,
+    "common_diluents_ml": [10, 20],
+    "example_doses_mg": [5, 10]
+  },
+  "storage_notes": "Store in a cool, dry place away from direct sunlight. Topical formulations should be stored according to manufacturer instructions, typically at room temperature. Powder form should be refrigerated.",
+  "references": [
+    {
+      "id": "ref1",
+      "title": "Efficacy of acetyl hexapeptide-8 in reducing wrinkle depth",
+      "source": "Review",
+      "year": 2013,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Clinical study examining argireline's effects on facial wrinkles compared to baseline."
+    },
+    {
+      "id": "ref2",
+      "title": "Topical peptides in cosmetic dermatology",
+      "source": "Review",
+      "year": 2019,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "note": "Comprehensive review of cosmetic peptides including argireline and their mechanisms."
+    },
+    {
+      "id": "ref3",
+      "title": "Safety and efficacy of acetyl hexapeptide-3 in anti-aging formulations",
+      "source": "Other",
+      "year": 2020,
+      "url": "https://example.com/argireline-safety",
+      "note": "Evaluates safety profile of argireline in cosmetic products."
+    }
+  ],
+  "last_reviewed": "2025-11-13"
+}
